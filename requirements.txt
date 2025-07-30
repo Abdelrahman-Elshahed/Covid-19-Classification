@@ -1,0 +1,10 @@
+# Core requirements
+fastapi
+uvicorn
+pydantic
+
+# Data science and ML
+pandas
+scikit-learn
+
+# Add any other packages you need below
