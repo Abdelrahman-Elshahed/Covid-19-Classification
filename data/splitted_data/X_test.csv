@@ -1,0 +1,601 @@
+Age,Gender,Region,Preexisting_Condition,COVID_Strain,Symptoms,Severity,Hospitalized,ICU_Admission,Ventilator_Support,Recovered,Vaccination_Status,Doses_Received,Occupation,Smoking_Status,BMI,Recovery_Classification
+26,Male,Hovedstaden,Asthma,Omicron,Severe,Low,No,No,No,No,No,0,Unemployed,Current,24.8,Fast Recovery
+79,Male,Sjælland,Cardiovascular,Alpha,Severe,Low,No,No,No,Yes,Yes,1,Office Worker,Former,20.8,Delayed Recovery
+82,Male,Nordjylland,Hypertension,XBB.1.5,Moderate,Low,No,No,No,No,Yes,3,Driver,Never,26.7,Fast Recovery
+78,Male,Midtjylland,Hypertension,Omicron,Mild,Critical,No,No,No,No,Yes,3,Student,Former,30.8,Delayed Recovery
+49,Female,Hovedstaden,Hypertension,Delta,Moderate,Low,No,No,No,No,Yes,2,Teacher,Current,26.4,Typical Recovery
+50,Male,Nordjylland,Obesity,Alpha,Moderate,Critical,No,No,No,Yes,Yes,1,Unemployed,Never,28.1,Delayed Recovery
+40,Female,Sjælland,Cardiovascular,XBB.1.5,Moderate,High,No,No,No,Yes,Yes,1,Unemployed,Current,25.8,Delayed Recovery
+31,Male,Nordjylland,Obesity,XBB.1.5,Severe,Moderate,Yes,No,No,Yes,No,0,Teacher,Never,23.0,Delayed Recovery
+86,Female,Sjælland,Diabetes,Omicron,Mild,High,No,No,No,No,No,0,Healthcare,Current,25.7,Delayed Recovery
+21,Female,Syddanmark,Diabetes,Delta,Severe,Critical,Yes,No,No,Yes,Yes,3,Student,Current,29.6,Delayed Recovery
+45,Female,Nordjylland,Obesity,Delta,Severe,High,Yes,No,No,No,Yes,1,Student,Former,18.6,Delayed Recovery
+57,Female,Syddanmark,Diabetes,Alpha,Moderate,High,No,No,No,No,No,0,Driver,Former,26.7,Delayed Recovery
+82,Female,Sjælland,Obesity,XBB.1.5,Severe,High,No,No,No,Yes,No,0,Unemployed,Never,29.1,Delayed Recovery
+53,Male,Hovedstaden,Hypertension,Alpha,Severe,Low,No,No,No,No,No,0,Student,Never,32.5,Typical Recovery
+51,Male,Hovedstaden,Obesity,Delta,Mild,High,No,No,No,Yes,No,0,Office Worker,Former,26.7,Delayed Recovery
+80,Male,Nordjylland,Cardiovascular,Delta,Mild,Moderate,No,No,No,Yes,No,0,Driver,Former,24.7,Delayed Recovery
+25,Male,Midtjylland,Cardiovascular,Alpha,Severe,Moderate,Yes,No,No,Yes,No,0,Student,Former,35.3,Delayed Recovery
+77,Female,Sjælland,Cardiovascular,Delta,Moderate,Moderate,No,No,No,No,No,0,Student,Never,25.3,Typical Recovery
+43,Male,Sjælland,Cardiovascular,Beta,Moderate,Critical,No,No,No,No,No,0,Driver,Never,29.1,Delayed Recovery
+60,Male,Nordjylland,Obesity,Alpha,Moderate,Moderate,No,No,No,Yes,No,0,Student,Former,23.7,Delayed Recovery
+32,Female,Sjælland,Obesity,Omicron,Moderate,High,No,No,No,Yes,No,0,Healthcare,Former,24.9,Delayed Recovery
+54,Female,Midtjylland,Hypertension,XBB.1.5,Moderate,High,No,No,No,No,Yes,2,Office Worker,Never,22.9,Delayed Recovery
+36,Female,Midtjylland,Diabetes,XBB.1.5,Severe,Moderate,No,No,No,No,Yes,1,Unemployed,Former,13.3,Typical Recovery
+74,Male,Midtjylland,Asthma,Delta,Mild,Critical,Yes,No,No,Yes,No,0,Unemployed,Never,30.2,Delayed Recovery
+83,Female,Sjælland,Diabetes,Beta,Severe,High,No,No,No,No,Yes,3,Driver,Former,35.0,Delayed Recovery
+38,Female,Nordjylland,Asthma,Omicron,Mild,Low,Yes,No,No,No,No,0,Student,Current,22.2,Fast Recovery
+69,Male,Midtjylland,Cardiovascular,Omicron,Mild,High,No,No,No,Yes,No,0,Teacher,Current,44.6,Delayed Recovery
+66,Female,Sjælland,Asthma,XBB.1.5,Mild,High,No,No,No,No,No,0,Office Worker,Current,18.6,Delayed Recovery
+61,Male,Hovedstaden,Diabetes,Delta,Moderate,Low,No,No,No,No,Yes,3,Healthcare,Never,26.6,Fast Recovery
+28,Male,Midtjylland,Cardiovascular,Omicron,Mild,Critical,Yes,No,No,Yes,No,0,Unemployed,Former,28.2,Delayed Recovery
+29,Female,Sjælland,Hypertension,Alpha,Severe,Critical,No,No,No,Yes,Yes,2,Unemployed,Never,19.9,Delayed Recovery
+49,Male,Midtjylland,Diabetes,Omicron,Severe,Low,No,No,No,Yes,Yes,2,Healthcare,Former,29.1,Delayed Recovery
+21,Female,Sjælland,Asthma,Omicron,Severe,Low,No,No,No,No,No,0,Driver,Never,27.8,Fast Recovery
+89,Male,Midtjylland,Obesity,Beta,Severe,Moderate,No,No,No,No,Yes,1,Office Worker,Never,23.9,Typical Recovery
+23,Female,Hovedstaden,Obesity,Delta,Mild,Critical,No,No,No,Yes,Yes,2,Student,Current,29.4,Delayed Recovery
+47,Female,Hovedstaden,Cardiovascular,Beta,Mild,Critical,No,No,No,No,No,0,Office Worker,Current,25.3,Delayed Recovery
+28,Male,Syddanmark,Obesity,Omicron,Moderate,Moderate,No,No,No,No,No,0,Student,Never,22.1,Typical Recovery
+69,Male,Midtjylland,Diabetes,Delta,Moderate,High,No,No,No,No,Yes,1,Office Worker,Former,23.1,Delayed Recovery
+72,Male,Midtjylland,Obesity,XBB.1.5,Severe,High,No,No,No,No,No,0,Healthcare,Former,27.3,Delayed Recovery
+60,Female,Sjælland,Cardiovascular,Alpha,Severe,Moderate,No,No,No,Yes,No,0,Student,Former,22.0,Delayed Recovery
+42,Female,Midtjylland,Asthma,Delta,Severe,Low,No,No,No,No,No,0,Unemployed,Former,25.3,Fast Recovery
+75,Female,Midtjylland,Hypertension,Omicron,Severe,High,No,No,No,Yes,Yes,2,Office Worker,Never,20.5,Delayed Recovery
+61,Female,Sjælland,Diabetes,Omicron,Mild,Critical,No,No,No,Yes,No,0,Office Worker,Former,18.3,Delayed Recovery
+30,Male,Nordjylland,Hypertension,Alpha,Mild,Moderate,Yes,No,No,No,Yes,3,Student,Never,19.1,Delayed Recovery
+42,Female,Midtjylland,Obesity,Omicron,Severe,Low,No,No,No,Yes,No,0,Driver,Former,22.8,Delayed Recovery
+22,Male,Sjælland,Hypertension,Omicron,Moderate,High,Yes,No,No,No,Yes,3,Unemployed,Never,27.8,Delayed Recovery
+52,Female,Syddanmark,Asthma,Delta,Mild,Low,Yes,No,No,Yes,Yes,2,Student,Never,27.4,Delayed Recovery
+25,Female,Hovedstaden,Cardiovascular,XBB.1.5,Severe,Moderate,Yes,No,No,Yes,Yes,1,Healthcare,Former,25.9,Delayed Recovery
+22,Female,Midtjylland,Cardiovascular,XBB.1.5,Mild,Critical,No,No,No,No,Yes,3,Driver,Never,29.4,Delayed Recovery
+27,Male,Syddanmark,Obesity,Delta,Mild,High,No,No,No,No,Yes,1,Office Worker,Current,33.3,Delayed Recovery
+26,Male,Nordjylland,Hypertension,Delta,Moderate,Critical,No,No,No,Yes,No,0,Office Worker,Former,21.9,Delayed Recovery
+46,Female,Nordjylland,Asthma,Delta,Mild,High,No,No,No,No,Yes,3,Teacher,Never,23.0,Delayed Recovery
+66,Male,Midtjylland,Asthma,Beta,Severe,Moderate,No,No,No,No,Yes,3,Student,Former,23.5,Typical Recovery
+20,Male,Sjælland,Hypertension,Beta,Severe,Low,No,No,No,No,No,0,Teacher,Never,27.1,Fast Recovery
+53,Male,Hovedstaden,Hypertension,XBB.1.5,Severe,Low,Yes,No,No,No,Yes,1,Healthcare,Former,25.8,Typical Recovery
+20,Male,Hovedstaden,Obesity,Omicron,Mild,Moderate,Yes,No,No,Yes,Yes,2,Healthcare,Former,33.5,Delayed Recovery
+45,Male,Sjælland,Obesity,Delta,Mild,High,No,No,No,Yes,Yes,2,Driver,Former,25.6,Delayed Recovery
+50,Male,Nordjylland,Hypertension,XBB.1.5,Mild,Critical,No,No,No,Yes,Yes,1,Healthcare,Current,22.9,Delayed Recovery
+52,Female,Hovedstaden,Obesity,Beta,Severe,Low,Yes,No,No,No,Yes,1,Office Worker,Never,28.7,Fast Recovery
+75,Female,Nordjylland,Cardiovascular,Beta,Mild,Low,Yes,No,No,Yes,Yes,1,Driver,Former,22.8,Delayed Recovery
+66,Female,Syddanmark,Cardiovascular,Beta,Mild,Critical,Yes,No,No,Yes,Yes,1,Teacher,Never,24.9,Delayed Recovery
+82,Female,Syddanmark,Cardiovascular,Delta,Mild,Moderate,No,No,No,No,No,0,Unemployed,Current,24.8,Typical Recovery
+65,Male,Midtjylland,Cardiovascular,Beta,Severe,Critical,Yes,Yes,Yes,Yes,No,0,Unemployed,Former,24.9,Delayed Recovery
+87,Female,Sjælland,Asthma,XBB.1.5,Moderate,High,Yes,No,No,Yes,No,0,Healthcare,Never,24.8,Delayed Recovery
+63,Female,Hovedstaden,Cardiovascular,XBB.1.5,Severe,High,No,No,No,No,No,0,Student,Never,25.9,Delayed Recovery
+27,Male,Syddanmark,Hypertension,Delta,Mild,Moderate,No,No,No,Yes,No,0,Student,Never,23.6,Delayed Recovery
+51,Male,Sjælland,Obesity,XBB.1.5,Moderate,Critical,No,No,No,Yes,Yes,1,Driver,Current,19.6,Delayed Recovery
+53,Female,Hovedstaden,Diabetes,Beta,Mild,High,Yes,No,No,Yes,Yes,1,Teacher,Current,21.2,Delayed Recovery
+30,Female,Hovedstaden,Diabetes,XBB.1.5,Severe,High,No,No,No,No,No,0,Student,Current,23.3,Delayed Recovery
+46,Male,Midtjylland,Asthma,Beta,Moderate,High,No,No,No,No,Yes,3,Teacher,Never,25.6,Delayed Recovery
+70,Female,Sjælland,Asthma,XBB.1.5,Severe,Critical,Yes,No,No,No,Yes,2,Unemployed,Current,27.1,Delayed Recovery
+30,Female,Midtjylland,Diabetes,Beta,Mild,High,No,No,No,Yes,Yes,3,Driver,Former,28.3,Delayed Recovery
+32,Female,Sjælland,Cardiovascular,Delta,Moderate,High,Yes,Yes,No,No,No,0,Office Worker,Never,22.2,Delayed Recovery
+30,Male,Hovedstaden,Cardiovascular,Alpha,Moderate,Low,No,No,No,No,Yes,1,Unemployed,Former,32.1,Fast Recovery
+49,Male,Sjælland,Cardiovascular,Delta,Severe,High,Yes,No,No,Yes,Yes,3,Office Worker,Current,33.1,Delayed Recovery
+85,Female,Hovedstaden,Asthma,Beta,Mild,Critical,Yes,No,No,Yes,Yes,3,Office Worker,Former,24.7,Delayed Recovery
+85,Male,Hovedstaden,Diabetes,Alpha,Severe,High,No,No,No,Yes,No,0,Unemployed,Never,24.7,Delayed Recovery
+53,Female,Midtjylland,Diabetes,Delta,Moderate,Moderate,Yes,No,No,Yes,No,0,Student,Never,24.1,Delayed Recovery
+34,Female,Sjælland,Cardiovascular,Delta,Moderate,Moderate,Yes,No,No,No,No,0,Office Worker,Former,22.4,Typical Recovery
+48,Male,Sjælland,Asthma,XBB.1.5,Mild,Low,Yes,No,No,No,No,0,Office Worker,Current,19.6,Fast Recovery
+60,Male,Midtjylland,Obesity,Alpha,Mild,Critical,No,No,No,No,No,0,Driver,Current,22.3,Delayed Recovery
+30,Male,Hovedstaden,Cardiovascular,Beta,Severe,High,No,No,No,No,Yes,3,Unemployed,Former,22.9,Delayed Recovery
+68,Male,Nordjylland,Cardiovascular,Omicron,Mild,High,Yes,Yes,No,No,Yes,3,Office Worker,Former,20.2,Delayed Recovery
+32,Male,Sjælland,Asthma,XBB.1.5,Mild,Moderate,No,No,No,Yes,Yes,2,Teacher,Current,20.9,Delayed Recovery
+19,Female,Midtjylland,Cardiovascular,Beta,Moderate,Moderate,No,No,No,Yes,Yes,1,Office Worker,Former,26.0,Delayed Recovery
+34,Female,Nordjylland,Obesity,Alpha,Moderate,High,No,No,No,Yes,No,0,Driver,Never,23.9,Delayed Recovery
+69,Male,Midtjylland,Obesity,Omicron,Moderate,Critical,No,No,No,Yes,Yes,2,Unemployed,Never,24.8,Delayed Recovery
+44,Female,Hovedstaden,Asthma,Omicron,Mild,Low,No,No,No,Yes,No,0,Office Worker,Current,32.2,Delayed Recovery
+71,Male,Midtjylland,Diabetes,XBB.1.5,Moderate,High,No,No,No,No,No,0,Unemployed,Former,34.3,Delayed Recovery
+61,Male,Nordjylland,Asthma,Alpha,Mild,Moderate,No,No,No,No,Yes,3,Student,Former,28.5,Typical Recovery
+32,Male,Midtjylland,Hypertension,XBB.1.5,Mild,Moderate,Yes,No,No,Yes,No,0,Driver,Current,27.1,Delayed Recovery
+51,Female,Midtjylland,Cardiovascular,Delta,Severe,Low,No,No,No,Yes,No,0,Student,Former,21.3,Delayed Recovery
+30,Male,Hovedstaden,Diabetes,Omicron,Mild,Moderate,Yes,No,No,No,Yes,3,Office Worker,Current,25.2,Typical Recovery
+26,Male,Midtjylland,Diabetes,XBB.1.5,Severe,Moderate,No,No,No,Yes,Yes,2,Driver,Current,25.9,Delayed Recovery
+28,Female,Syddanmark,Hypertension,Omicron,Severe,Critical,No,No,No,No,No,0,Teacher,Former,17.4,Delayed Recovery
+77,Female,Syddanmark,Diabetes,Alpha,Moderate,High,Yes,No,No,No,No,0,Office Worker,Former,33.1,Delayed Recovery
+19,Male,Sjælland,Diabetes,Omicron,Severe,Critical,Yes,No,No,No,Yes,1,Student,Never,23.6,Delayed Recovery
+79,Male,Midtjylland,Cardiovascular,Beta,Mild,Moderate,Yes,No,No,Yes,Yes,3,Office Worker,Current,25.2,Delayed Recovery
+23,Female,Syddanmark,Obesity,Omicron,Mild,Low,Yes,No,No,Yes,No,0,Healthcare,Current,29.2,Typical Recovery
+80,Female,Midtjylland,Cardiovascular,Alpha,Severe,Critical,No,No,No,Yes,No,0,Unemployed,Current,25.6,Delayed Recovery
+36,Female,Midtjylland,Diabetes,Beta,Mild,Low,No,No,No,No,No,0,Student,Former,29.5,Typical Recovery
+83,Male,Midtjylland,Hypertension,Delta,Severe,High,Yes,No,No,Yes,Yes,2,Office Worker,Current,19.2,Delayed Recovery
+73,Female,Midtjylland,Diabetes,Omicron,Severe,Moderate,Yes,No,No,No,No,0,Healthcare,Never,27.7,Typical Recovery
+40,Female,Sjælland,Asthma,XBB.1.5,Mild,Moderate,No,No,No,Yes,Yes,2,Student,Never,14.5,Delayed Recovery
+50,Male,Hovedstaden,Hypertension,Delta,Moderate,Moderate,No,No,No,No,Yes,1,Office Worker,Never,27.0,Typical Recovery
+69,Female,Sjælland,Cardiovascular,Delta,Moderate,Low,Yes,No,No,No,No,0,Office Worker,Former,28.9,Delayed Recovery
+27,Male,Nordjylland,Hypertension,Delta,Severe,Moderate,No,No,No,Yes,Yes,2,Teacher,Current,35.8,Delayed Recovery
+81,Female,Sjælland,Cardiovascular,Delta,Mild,Low,No,No,No,Yes,No,0,Driver,Never,29.1,Delayed Recovery
+54,Female,Midtjylland,Obesity,Beta,Mild,Low,No,No,No,Yes,No,0,Student,Never,27.7,Delayed Recovery
+49,Male,Hovedstaden,Cardiovascular,XBB.1.5,Severe,Moderate,Yes,No,No,No,Yes,1,Unemployed,Never,24.6,Typical Recovery
+37,Female,Hovedstaden,Cardiovascular,Beta,Severe,Moderate,No,No,No,Yes,Yes,3,Healthcare,Never,14.9,Delayed Recovery
+28,Female,Syddanmark,Obesity,Alpha,Severe,Critical,No,No,No,Yes,No,0,Student,Former,24.7,Typical Recovery
+58,Male,Midtjylland,Asthma,Omicron,Mild,Critical,No,No,No,Yes,No,0,Healthcare,Current,18.0,Delayed Recovery
+57,Female,Nordjylland,Hypertension,Beta,Moderate,High,No,No,No,Yes,No,0,Student,Current,13.3,Delayed Recovery
+37,Male,Sjælland,Hypertension,Delta,Moderate,High,No,No,No,Yes,Yes,2,Driver,Never,22.5,Delayed Recovery
+58,Male,Midtjylland,Hypertension,Delta,Mild,Moderate,No,No,No,No,Yes,2,Office Worker,Never,22.1,Typical Recovery
+39,Female,Syddanmark,Cardiovascular,Beta,Severe,High,No,No,No,No,No,0,Office Worker,Former,26.4,Delayed Recovery
+84,Female,Hovedstaden,Cardiovascular,Omicron,Mild,High,No,No,No,No,No,0,Student,Former,15.4,Delayed Recovery
+77,Female,Syddanmark,Obesity,Omicron,Severe,High,No,No,No,No,No,0,Student,Former,22.9,Delayed Recovery
+81,Male,Hovedstaden,Hypertension,XBB.1.5,Mild,High,No,No,No,Yes,No,0,Teacher,Former,15.6,Delayed Recovery
+23,Male,Nordjylland,Cardiovascular,Delta,Mild,Moderate,No,No,No,No,No,0,Student,Former,17.2,Typical Recovery
+82,Female,Hovedstaden,Cardiovascular,Omicron,Severe,High,No,No,No,No,Yes,3,Student,Current,28.0,Delayed Recovery
+19,Female,Syddanmark,Diabetes,Beta,Severe,Moderate,No,No,No,No,No,0,Student,Former,29.9,Typical Recovery
+82,Male,Midtjylland,Asthma,Alpha,Severe,Low,Yes,No,No,Yes,Yes,3,Unemployed,Current,26.4,Delayed Recovery
+72,Male,Hovedstaden,Cardiovascular,Alpha,Mild,Moderate,Yes,No,No,No,Yes,3,Student,Former,24.7,Typical Recovery
+34,Female,Midtjylland,Obesity,Delta,Mild,Low,No,No,No,No,No,0,Healthcare,Former,26.7,Fast Recovery
+88,Male,Syddanmark,Hypertension,Beta,Mild,Low,Yes,No,No,No,No,0,Teacher,Never,37.7,Fast Recovery
+75,Male,Sjælland,Hypertension,Omicron,Severe,Low,No,No,No,Yes,Yes,1,Driver,Current,14.2,Delayed Recovery
+26,Male,Sjælland,Cardiovascular,Omicron,Moderate,Moderate,No,No,No,Yes,No,0,Student,Never,25.4,Delayed Recovery
+83,Male,Hovedstaden,Asthma,Beta,Mild,Critical,No,No,No,Yes,No,0,Unemployed,Current,23.4,Delayed Recovery
+76,Male,Midtjylland,Cardiovascular,XBB.1.5,Mild,High,No,No,No,No,No,0,Office Worker,Former,24.3,Delayed Recovery
+52,Male,Sjælland,Diabetes,Beta,Severe,Low,No,No,No,No,No,0,Healthcare,Current,22.0,Delayed Recovery
+30,Male,Sjælland,Cardiovascular,XBB.1.5,Severe,Low,No,No,No,Yes,No,0,Driver,Former,27.0,Delayed Recovery
+58,Male,Hovedstaden,Hypertension,Alpha,Mild,High,Yes,Yes,No,Yes,No,0,Unemployed,Current,14.6,Delayed Recovery
+19,Female,Nordjylland,Obesity,Alpha,Moderate,Low,No,No,No,No,Yes,1,Healthcare,Current,22.2,Fast Recovery
+83,Male,Sjælland,Diabetes,Beta,Severe,Moderate,No,No,No,Yes,Yes,2,Healthcare,Never,30.4,Delayed Recovery
+50,Male,Sjælland,Diabetes,Delta,Mild,Critical,No,No,No,No,No,0,Driver,Current,24.9,Delayed Recovery
+22,Male,Syddanmark,Cardiovascular,Omicron,Mild,Moderate,No,No,No,No,No,0,Driver,Current,34.6,Typical Recovery
+34,Female,Syddanmark,Diabetes,Alpha,Severe,Moderate,No,No,No,No,No,0,Teacher,Never,11.8,Typical Recovery
+50,Male,Nordjylland,Diabetes,XBB.1.5,Severe,High,No,No,No,No,No,0,Office Worker,Current,21.7,Delayed Recovery
+62,Male,Syddanmark,Cardiovascular,Omicron,Mild,Low,No,No,No,Yes,Yes,3,Student,Never,28.2,Delayed Recovery
+59,Male,Hovedstaden,Hypertension,XBB.1.5,Mild,Critical,No,No,No,Yes,Yes,1,Student,Former,20.1,Delayed Recovery
+36,Female,Nordjylland,Asthma,Beta,Severe,Moderate,No,No,No,No,No,0,Office Worker,Former,38.2,Typical Recovery
+21,Male,Nordjylland,Hypertension,Alpha,Severe,High,No,No,No,No,Yes,2,Healthcare,Current,22.4,Delayed Recovery
+33,Female,Syddanmark,Cardiovascular,Omicron,Moderate,Critical,Yes,No,No,No,Yes,3,Teacher,Former,28.8,Delayed Recovery
+66,Male,Sjælland,Cardiovascular,Omicron,Moderate,Moderate,No,No,No,Yes,Yes,3,Healthcare,Never,29.8,Delayed Recovery
+87,Female,Sjælland,Obesity,Delta,Moderate,Low,Yes,No,No,Yes,Yes,1,Teacher,Former,26.9,Delayed Recovery
+38,Male,Sjælland,Hypertension,Omicron,Moderate,High,No,No,No,Yes,Yes,2,Healthcare,Never,27.3,Delayed Recovery
+19,Male,Nordjylland,Cardiovascular,Delta,Mild,Low,Yes,No,No,Yes,Yes,1,Healthcare,Never,25.8,Delayed Recovery
+57,Female,Sjælland,Obesity,Delta,Mild,High,Yes,No,No,No,Yes,2,Office Worker,Never,27.1,Delayed Recovery
+85,Female,Sjælland,Asthma,XBB.1.5,Severe,High,No,No,No,No,Yes,2,Unemployed,Former,26.6,Delayed Recovery
+37,Female,Midtjylland,Diabetes,Beta,Mild,Moderate,No,No,No,No,No,0,Unemployed,Current,27.5,Typical Recovery
+75,Male,Syddanmark,Cardiovascular,Delta,Moderate,Low,No,No,No,Yes,Yes,2,Student,Former,29.1,Delayed Recovery
+89,Female,Sjælland,Hypertension,Omicron,Mild,High,No,No,No,Yes,Yes,2,Unemployed,Former,25.9,Delayed Recovery
+43,Male,Hovedstaden,Asthma,Beta,Severe,Moderate,Yes,No,No,No,No,0,Healthcare,Former,28.1,Typical Recovery
+77,Male,Midtjylland,Cardiovascular,XBB.1.5,Severe,Moderate,No,No,No,Yes,Yes,1,Office Worker,Never,20.9,Delayed Recovery
+77,Male,Nordjylland,Cardiovascular,XBB.1.5,Severe,Low,No,No,No,No,Yes,2,Healthcare,Former,21.2,Fast Recovery
+58,Male,Midtjylland,Diabetes,Beta,Moderate,Critical,No,No,No,No,Yes,2,Student,Former,24.0,Delayed Recovery
+68,Male,Nordjylland,Obesity,Omicron,Mild,High,Yes,No,No,No,No,0,Office Worker,Former,25.2,Delayed Recovery
+26,Female,Hovedstaden,Asthma,Beta,Mild,Moderate,No,No,No,Yes,No,0,Teacher,Former,26.1,Delayed Recovery
+66,Female,Hovedstaden,Diabetes,Delta,Mild,High,No,No,No,Yes,Yes,1,Office Worker,Current,30.3,Delayed Recovery
+60,Female,Syddanmark,Diabetes,Alpha,Mild,High,No,No,No,Yes,Yes,1,Unemployed,Former,20.5,Delayed Recovery
+48,Female,Syddanmark,Cardiovascular,Beta,Severe,Moderate,No,No,No,No,No,0,Office Worker,Former,28.8,Typical Recovery
+55,Female,Nordjylland,Cardiovascular,Alpha,Moderate,High,No,No,No,No,Yes,3,Teacher,Former,33.1,Delayed Recovery
+50,Female,Hovedstaden,Cardiovascular,Omicron,Mild,Moderate,Yes,No,No,Yes,Yes,3,Teacher,Former,28.6,Delayed Recovery
+35,Female,Nordjylland,Asthma,Beta,Severe,Critical,No,No,No,No,No,0,Healthcare,Never,24.9,Delayed Recovery
+61,Female,Nordjylland,Diabetes,Alpha,Moderate,High,No,No,No,Yes,Yes,3,Office Worker,Current,13.0,Delayed Recovery
+54,Female,Syddanmark,Cardiovascular,Omicron,Moderate,High,No,No,No,No,No,0,Unemployed,Never,26.5,Delayed Recovery
+23,Female,Midtjylland,Diabetes,Omicron,Moderate,Critical,No,No,No,Yes,Yes,1,Student,Current,25.6,Delayed Recovery
+55,Male,Nordjylland,Obesity,Beta,Moderate,High,No,No,No,Yes,No,0,Healthcare,Never,33.1,Delayed Recovery
+70,Male,Syddanmark,Obesity,Delta,Mild,Moderate,No,No,No,No,Yes,3,Student,Current,13.6,Typical Recovery
+38,Male,Syddanmark,Asthma,Delta,Moderate,Low,Yes,No,No,No,No,0,Driver,Current,27.1,Delayed Recovery
+82,Female,Nordjylland,Hypertension,Alpha,Moderate,Moderate,No,No,No,Yes,No,0,Student,Never,29.9,Delayed Recovery
+19,Male,Hovedstaden,Hypertension,Alpha,Moderate,Low,Yes,No,No,No,Yes,2,Driver,Current,32.5,Fast Recovery
+70,Male,Sjælland,Cardiovascular,Beta,Mild,Critical,Yes,No,No,No,No,0,Student,Never,26.1,Delayed Recovery
+69,Male,Nordjylland,Cardiovascular,Delta,Severe,High,No,No,No,No,No,0,Teacher,Current,29.2,Delayed Recovery
+86,Male,Nordjylland,Hypertension,Alpha,Severe,Low,No,No,No,Yes,Yes,2,Unemployed,Never,20.7,Delayed Recovery
+58,Female,Nordjylland,Asthma,Beta,Mild,Low,Yes,No,No,No,Yes,1,Student,Never,17.9,Fast Recovery
+52,Male,Nordjylland,Cardiovascular,XBB.1.5,Moderate,Low,No,No,No,No,Yes,1,Driver,Former,29.9,Fast Recovery
+50,Male,Midtjylland,Cardiovascular,Omicron,Moderate,Critical,No,No,No,Yes,No,0,Office Worker,Current,35.1,Delayed Recovery
+80,Male,Hovedstaden,Cardiovascular,Delta,Moderate,Moderate,No,No,No,Yes,No,0,Office Worker,Current,20.1,Delayed Recovery
+21,Male,Sjælland,Cardiovascular,XBB.1.5,Mild,High,No,No,No,Yes,Yes,1,Office Worker,Current,24.5,Delayed Recovery
+48,Female,Midtjylland,Asthma,Omicron,Mild,Moderate,Yes,No,No,No,Yes,2,Driver,Current,32.8,Delayed Recovery
+42,Male,Syddanmark,Hypertension,Delta,Moderate,Low,No,No,No,Yes,Yes,1,Teacher,Former,31.9,Delayed Recovery
+21,Male,Midtjylland,Obesity,Omicron,Severe,High,No,No,No,No,No,0,Office Worker,Former,25.1,Delayed Recovery
+42,Female,Nordjylland,Obesity,Alpha,Moderate,High,Yes,Yes,No,Yes,No,0,Office Worker,Never,26.9,Delayed Recovery
+79,Female,Syddanmark,Hypertension,Delta,Severe,Moderate,Yes,No,No,No,No,0,Student,Former,18.3,Typical Recovery
+51,Female,Sjælland,Asthma,Omicron,Severe,High,No,No,No,No,Yes,3,Student,Never,22.0,Delayed Recovery
+22,Male,Sjælland,Diabetes,Alpha,Severe,Moderate,No,No,No,Yes,No,0,Unemployed,Never,23.9,Delayed Recovery
+53,Female,Hovedstaden,Asthma,XBB.1.5,Severe,High,No,No,No,Yes,Yes,3,Unemployed,Never,33.0,Delayed Recovery
+85,Male,Syddanmark,Cardiovascular,Delta,Severe,High,Yes,No,No,Yes,No,0,Office Worker,Former,26.4,Delayed Recovery
+66,Female,Sjælland,Diabetes,Omicron,Mild,Low,No,No,No,Yes,No,0,Healthcare,Never,31.6,Delayed Recovery
+35,Male,Hovedstaden,Asthma,Beta,Mild,Low,No,No,No,No,Yes,1,Office Worker,Current,18.5,Fast Recovery
+83,Female,Midtjylland,Diabetes,XBB.1.5,Mild,Low,Yes,No,No,Yes,Yes,1,Healthcare,Current,27.5,Typical Recovery
+78,Female,Hovedstaden,Asthma,Beta,Severe,Critical,No,No,No,Yes,No,0,Student,Current,28.1,Delayed Recovery
+30,Female,Nordjylland,Obesity,Delta,Severe,High,Yes,No,No,No,Yes,1,Teacher,Never,34.2,Delayed Recovery
+40,Female,Nordjylland,Obesity,XBB.1.5,Moderate,High,Yes,Yes,Yes,No,Yes,2,Unemployed,Never,19.6,Delayed Recovery
+70,Female,Sjælland,Diabetes,Beta,Severe,High,No,No,No,No,No,0,Unemployed,Former,24.3,Delayed Recovery
+34,Female,Nordjylland,Diabetes,Beta,Mild,High,Yes,Yes,No,No,No,0,Teacher,Former,24.8,Delayed Recovery
+32,Male,Nordjylland,Hypertension,Delta,Severe,Low,No,No,No,Yes,No,0,Teacher,Current,25.4,Delayed Recovery
+51,Female,Midtjylland,Obesity,XBB.1.5,Severe,Moderate,Yes,No,No,No,Yes,3,Student,Never,24.5,Delayed Recovery
+29,Female,Hovedstaden,Cardiovascular,Beta,Severe,High,Yes,No,No,No,Yes,1,Office Worker,Former,30.9,Delayed Recovery
+42,Male,Syddanmark,Asthma,Beta,Severe,Moderate,No,No,No,No,Yes,1,Healthcare,Former,22.7,Typical Recovery
+30,Male,Nordjylland,Obesity,Beta,Severe,High,No,No,No,Yes,Yes,2,Unemployed,Never,14.2,Delayed Recovery
+36,Male,Midtjylland,Diabetes,XBB.1.5,Moderate,Critical,Yes,Yes,Yes,Yes,No,0,Healthcare,Current,26.5,Delayed Recovery
+42,Male,Midtjylland,Cardiovascular,Alpha,Moderate,Moderate,No,No,No,Yes,No,0,Teacher,Former,25.3,Delayed Recovery
+22,Female,Hovedstaden,Cardiovascular,Omicron,Severe,Low,No,No,No,No,Yes,1,Driver,Never,19.6,Fast Recovery
+71,Female,Sjælland,Cardiovascular,Beta,Severe,Critical,No,No,No,Yes,Yes,2,Driver,Former,34.8,Delayed Recovery
+46,Female,Syddanmark,Asthma,Delta,Moderate,Moderate,No,No,No,No,Yes,3,Driver,Current,30.3,Typical Recovery
+56,Female,Nordjylland,Diabetes,Beta,Mild,High,No,No,No,No,Yes,3,Healthcare,Former,17.3,Delayed Recovery
+83,Female,Sjælland,Obesity,Beta,Moderate,Low,No,No,No,No,No,0,Unemployed,Former,23.2,Fast Recovery
+87,Male,Syddanmark,Obesity,Omicron,Moderate,High,No,No,No,No,No,0,Healthcare,Former,22.2,Delayed Recovery
+72,Male,Hovedstaden,Diabetes,Beta,Severe,Low,No,No,No,No,No,0,Office Worker,Former,15.3,Delayed Recovery
+53,Male,Midtjylland,Asthma,Delta,Severe,High,No,No,No,No,No,0,Healthcare,Current,16.8,Delayed Recovery
+68,Female,Midtjylland,Hypertension,XBB.1.5,Moderate,Low,No,No,No,No,Yes,1,Teacher,Former,30.6,Fast Recovery
+28,Female,Nordjylland,Hypertension,Alpha,Moderate,High,No,No,No,No,Yes,2,Unemployed,Never,22.7,Delayed Recovery
+85,Female,Sjælland,Obesity,Alpha,Moderate,Low,No,No,No,No,Yes,3,Student,Current,29.2,Fast Recovery
+35,Female,Sjælland,Hypertension,Beta,Mild,High,No,No,No,No,Yes,3,Teacher,Former,27.4,Delayed Recovery
+78,Male,Nordjylland,Hypertension,XBB.1.5,Mild,Critical,No,No,No,Yes,No,0,Student,Former,34.7,Delayed Recovery
+47,Male,Syddanmark,Cardiovascular,Omicron,Severe,Low,No,No,No,No,No,0,Unemployed,Former,18.6,Fast Recovery
+50,Female,Syddanmark,Diabetes,XBB.1.5,Moderate,High,No,No,No,No,Yes,1,Unemployed,Former,27.4,Delayed Recovery
+83,Male,Syddanmark,Diabetes,Omicron,Moderate,Low,No,No,No,Yes,No,0,Teacher,Current,19.7,Delayed Recovery
+69,Female,Hovedstaden,Hypertension,XBB.1.5,Moderate,Moderate,No,No,No,Yes,Yes,3,Teacher,Former,23.8,Delayed Recovery
+49,Female,Syddanmark,Hypertension,Delta,Moderate,Moderate,No,No,No,No,No,0,Student,Former,19.6,Typical Recovery
+37,Male,Syddanmark,Obesity,XBB.1.5,Moderate,Critical,No,No,No,No,Yes,3,Teacher,Never,18.0,Delayed Recovery
+70,Female,Hovedstaden,Cardiovascular,XBB.1.5,Mild,Low,No,No,No,No,Yes,3,Office Worker,Current,27.1,Fast Recovery
+89,Male,Syddanmark,Cardiovascular,Delta,Moderate,Critical,No,No,No,Yes,Yes,3,Teacher,Current,26.5,Delayed Recovery
+41,Male,Syddanmark,Diabetes,Beta,Mild,Moderate,No,No,No,Yes,No,0,Healthcare,Never,23.8,Delayed Recovery
+81,Male,Nordjylland,Obesity,Alpha,Moderate,Low,No,No,No,No,Yes,2,Teacher,Current,29.0,Fast Recovery
+66,Male,Nordjylland,Cardiovascular,Beta,Severe,Critical,Yes,No,No,No,Yes,3,Office Worker,Former,17.2,Delayed Recovery
+69,Female,Midtjylland,Diabetes,Delta,Moderate,Critical,No,No,No,Yes,No,0,Office Worker,Former,24.3,Delayed Recovery
+30,Female,Syddanmark,Diabetes,Alpha,Moderate,Moderate,No,No,No,No,Yes,3,Teacher,Current,24.6,Typical Recovery
+30,Female,Midtjylland,Diabetes,XBB.1.5,Mild,Critical,No,No,No,No,Yes,3,Healthcare,Never,21.4,Delayed Recovery
+51,Female,Midtjylland,Cardiovascular,Delta,Severe,Low,No,No,No,Yes,No,0,Unemployed,Former,29.5,Delayed Recovery
+77,Male,Syddanmark,Obesity,Delta,Severe,Low,No,No,No,Yes,Yes,1,Teacher,Former,27.9,Delayed Recovery
+58,Male,Midtjylland,Cardiovascular,Alpha,Moderate,High,No,No,No,Yes,Yes,2,Student,Former,23.5,Delayed Recovery
+18,Male,Syddanmark,Diabetes,XBB.1.5,Moderate,High,No,No,No,Yes,No,0,Teacher,Never,18.0,Delayed Recovery
+35,Male,Sjælland,Hypertension,Alpha,Severe,Low,No,No,No,Yes,Yes,1,Teacher,Former,20.6,Delayed Recovery
+82,Male,Midtjylland,Cardiovascular,XBB.1.5,Mild,Moderate,No,No,No,No,Yes,1,Unemployed,Former,33.8,Typical Recovery
+68,Female,Hovedstaden,Obesity,Omicron,Moderate,Low,No,No,No,Yes,Yes,1,Office Worker,Former,22.1,Delayed Recovery
+69,Male,Midtjylland,Cardiovascular,Omicron,Severe,Moderate,Yes,No,No,Yes,Yes,1,Student,Never,27.5,Delayed Recovery
+29,Male,Syddanmark,Cardiovascular,XBB.1.5,Severe,Critical,Yes,Yes,Yes,Yes,No,0,Teacher,Never,15.2,Delayed Recovery
+44,Male,Syddanmark,Asthma,XBB.1.5,Mild,Moderate,No,No,No,No,No,0,Student,Current,20.8,Typical Recovery
+46,Male,Midtjylland,Diabetes,Delta,Severe,Low,No,No,No,No,No,0,Healthcare,Never,13.8,Fast Recovery
+85,Male,Syddanmark,Hypertension,Omicron,Severe,Critical,No,No,No,Yes,Yes,3,Driver,Never,28.2,Delayed Recovery
+27,Male,Sjælland,Hypertension,Beta,Severe,Low,No,No,No,Yes,No,0,Office Worker,Current,26.5,Delayed Recovery
+41,Male,Sjælland,Asthma,Omicron,Mild,Critical,No,No,No,Yes,Yes,1,Driver,Current,27.0,Delayed Recovery
+53,Male,Midtjylland,Cardiovascular,XBB.1.5,Mild,Low,No,No,No,Yes,No,0,Office Worker,Former,13.5,Delayed Recovery
+75,Female,Nordjylland,Asthma,XBB.1.5,Severe,Critical,No,No,No,Yes,No,0,Teacher,Never,26.5,Delayed Recovery
+49,Female,Hovedstaden,Cardiovascular,Delta,Moderate,Low,No,No,No,Yes,No,0,Office Worker,Former,19.6,Typical Recovery
+25,Female,Hovedstaden,Hypertension,Alpha,Moderate,Critical,No,No,No,Yes,No,0,Healthcare,Former,29.6,Delayed Recovery
+52,Male,Syddanmark,Cardiovascular,Alpha,Severe,Low,No,No,No,Yes,Yes,3,Teacher,Never,30.3,Delayed Recovery
+40,Female,Nordjylland,Asthma,Delta,Severe,Critical,No,No,No,Yes,Yes,2,Student,Current,22.5,Delayed Recovery
+87,Female,Nordjylland,Cardiovascular,Beta,Severe,Critical,Yes,Yes,Yes,Yes,Yes,1,Student,Never,22.7,Delayed Recovery
+71,Female,Midtjylland,Cardiovascular,Beta,Moderate,Critical,No,No,No,No,Yes,1,Teacher,Never,29.3,Delayed Recovery
+66,Female,Syddanmark,Diabetes,XBB.1.5,Moderate,Low,Yes,No,No,No,Yes,3,Driver,Former,17.4,Delayed Recovery
+85,Male,Sjælland,Obesity,Omicron,Mild,Low,No,No,No,No,Yes,3,Student,Never,26.5,Fast Recovery
+42,Female,Nordjylland,Obesity,Beta,Moderate,Low,Yes,No,No,No,Yes,2,Healthcare,Never,35.8,Fast Recovery
+27,Male,Syddanmark,Cardiovascular,Omicron,Moderate,Low,No,No,No,No,Yes,2,Healthcare,Former,28.7,Fast Recovery
+79,Male,Sjælland,Obesity,Beta,Moderate,High,No,No,No,No,No,0,Teacher,Current,22.1,Delayed Recovery
+47,Female,Hovedstaden,Cardiovascular,Beta,Mild,Low,No,No,No,Yes,No,0,Office Worker,Former,26.6,Delayed Recovery
+49,Male,Sjælland,Asthma,Omicron,Moderate,Moderate,No,No,No,Yes,No,0,Driver,Never,29.4,Delayed Recovery
+73,Male,Sjælland,Hypertension,Alpha,Moderate,Moderate,Yes,No,No,Yes,Yes,1,Healthcare,Never,16.7,Delayed Recovery
+19,Female,Nordjylland,Asthma,Delta,Severe,Low,Yes,No,No,No,No,0,Teacher,Never,27.4,Fast Recovery
+48,Male,Midtjylland,Cardiovascular,Delta,Moderate,High,No,No,No,Yes,Yes,3,Unemployed,Former,28.1,Delayed Recovery
+71,Male,Sjælland,Diabetes,Delta,Mild,Low,No,No,No,Yes,No,0,Driver,Never,25.9,Delayed Recovery
+72,Female,Sjælland,Asthma,Delta,Mild,Low,Yes,No,No,Yes,No,0,Office Worker,Current,33.3,Delayed Recovery
+52,Female,Nordjylland,Cardiovascular,Omicron,Moderate,High,No,No,No,No,Yes,1,Teacher,Former,32.3,Delayed Recovery
+72,Male,Sjælland,Asthma,Omicron,Mild,Low,Yes,No,No,No,Yes,1,Healthcare,Former,23.5,Delayed Recovery
+36,Male,Nordjylland,Obesity,Beta,Moderate,Critical,No,No,No,Yes,No,0,Unemployed,Current,25.6,Delayed Recovery
+32,Male,Midtjylland,Cardiovascular,Delta,Severe,Critical,No,No,No,Yes,No,0,Unemployed,Current,24.2,Delayed Recovery
+31,Female,Nordjylland,Asthma,XBB.1.5,Mild,Low,Yes,No,No,No,No,0,Student,Former,23.5,Fast Recovery
+72,Male,Syddanmark,Cardiovascular,Alpha,Mild,Critical,No,No,No,Yes,No,0,Office Worker,Former,28.1,Delayed Recovery
+88,Male,Nordjylland,Diabetes,Omicron,Mild,Moderate,No,No,No,Yes,Yes,3,Student,Former,19.9,Delayed Recovery
+45,Female,Midtjylland,Obesity,Beta,Moderate,Low,No,No,No,Yes,No,0,Office Worker,Former,24.4,Delayed Recovery
+64,Male,Sjælland,Cardiovascular,Delta,Moderate,Moderate,No,No,No,No,No,0,Student,Never,21.2,Delayed Recovery
+41,Male,Syddanmark,Cardiovascular,XBB.1.5,Severe,High,No,No,No,No,No,0,Student,Current,17.1,Delayed Recovery
+85,Female,Hovedstaden,Asthma,Delta,Mild,High,No,No,No,Yes,Yes,1,Teacher,Current,34.3,Delayed Recovery
+38,Female,Nordjylland,Cardiovascular,Delta,Mild,High,No,No,No,Yes,Yes,2,Driver,Former,19.0,Delayed Recovery
+75,Male,Hovedstaden,Diabetes,Delta,Mild,Moderate,No,No,No,Yes,No,0,Unemployed,Current,28.2,Delayed Recovery
+65,Female,Nordjylland,Hypertension,Alpha,Severe,Moderate,Yes,No,No,Yes,Yes,2,Teacher,Current,20.6,Delayed Recovery
+34,Female,Midtjylland,Hypertension,Delta,Mild,Moderate,No,No,No,No,No,0,Unemployed,Never,29.5,Typical Recovery
+24,Female,Syddanmark,Diabetes,Delta,Moderate,High,No,No,No,Yes,Yes,3,Teacher,Never,19.6,Delayed Recovery
+65,Female,Midtjylland,Hypertension,Alpha,Moderate,High,No,No,No,No,Yes,1,Teacher,Never,28.9,Delayed Recovery
+87,Male,Nordjylland,Asthma,Beta,Moderate,Moderate,No,No,No,Yes,No,0,Driver,Current,15.2,Delayed Recovery
+42,Female,Hovedstaden,Asthma,Alpha,Mild,Low,No,No,No,Yes,No,0,Driver,Never,18.0,Delayed Recovery
+27,Male,Sjælland,Hypertension,Omicron,Mild,High,No,No,No,Yes,No,0,Driver,Current,26.8,Delayed Recovery
+67,Female,Midtjylland,Asthma,Alpha,Mild,Moderate,No,No,No,Yes,Yes,1,Student,Never,16.0,Delayed Recovery
+23,Male,Nordjylland,Diabetes,Beta,Severe,Low,No,No,No,Yes,Yes,3,Office Worker,Never,21.2,Delayed Recovery
+58,Male,Nordjylland,Hypertension,Beta,Moderate,Moderate,Yes,No,No,No,No,0,Office Worker,Current,21.4,Typical Recovery
+21,Female,Midtjylland,Cardiovascular,Delta,Severe,Critical,No,No,No,Yes,Yes,1,Healthcare,Never,29.9,Delayed Recovery
+62,Male,Syddanmark,Diabetes,Beta,Moderate,High,No,No,No,Yes,No,0,Driver,Current,23.5,Delayed Recovery
+32,Male,Midtjylland,Cardiovascular,Beta,Mild,High,Yes,No,No,No,No,0,Unemployed,Current,31.1,Delayed Recovery
+39,Female,Sjælland,Hypertension,XBB.1.5,Moderate,Low,Yes,No,No,No,Yes,1,Student,Never,34.9,Fast Recovery
+76,Male,Nordjylland,Cardiovascular,Omicron,Mild,Moderate,No,No,No,No,No,0,Office Worker,Never,19.0,Typical Recovery
+66,Male,Hovedstaden,Diabetes,Omicron,Moderate,High,No,No,No,No,Yes,2,Teacher,Former,18.9,Delayed Recovery
+47,Female,Syddanmark,Hypertension,Alpha,Severe,Moderate,No,No,No,Yes,No,0,Healthcare,Former,21.9,Delayed Recovery
+42,Male,Nordjylland,Cardiovascular,XBB.1.5,Mild,Critical,No,No,No,No,No,0,Teacher,Current,24.9,Delayed Recovery
+68,Female,Syddanmark,Obesity,Beta,Mild,Critical,No,No,No,Yes,No,0,Office Worker,Current,16.0,Delayed Recovery
+71,Male,Hovedstaden,Asthma,XBB.1.5,Moderate,Moderate,No,No,No,Yes,No,0,Unemployed,Former,24.5,Delayed Recovery
+54,Male,Hovedstaden,Asthma,Beta,Severe,Critical,No,No,No,Yes,No,0,Healthcare,Current,21.8,Delayed Recovery
+24,Female,Hovedstaden,Cardiovascular,XBB.1.5,Severe,Low,Yes,No,No,No,No,0,Driver,Former,25.4,Fast Recovery
+32,Male,Hovedstaden,Asthma,Alpha,Severe,Critical,No,No,No,Yes,No,0,Unemployed,Former,21.4,Delayed Recovery
+40,Male,Hovedstaden,Obesity,Omicron,Mild,Critical,Yes,Yes,Yes,No,No,0,Teacher,Former,25.1,Delayed Recovery
+22,Female,Syddanmark,Diabetes,Alpha,Moderate,Low,No,No,No,No,No,0,Teacher,Never,28.0,Fast Recovery
+41,Female,Hovedstaden,Obesity,Omicron,Severe,Critical,No,No,No,No,Yes,1,Healthcare,Never,23.8,Delayed Recovery
+57,Female,Nordjylland,Obesity,Beta,Mild,Critical,No,No,No,No,Yes,3,Student,Never,26.0,Delayed Recovery
+81,Female,Hovedstaden,Cardiovascular,Omicron,Moderate,Moderate,No,No,No,No,No,0,Student,Current,31.6,Typical Recovery
+78,Female,Sjælland,Cardiovascular,Omicron,Mild,Moderate,Yes,No,No,Yes,No,0,Healthcare,Current,20.1,Delayed Recovery
+40,Female,Hovedstaden,Asthma,Alpha,Severe,Moderate,No,No,No,Yes,No,0,Teacher,Former,26.9,Delayed Recovery
+64,Female,Midtjylland,Cardiovascular,Beta,Moderate,Critical,No,No,No,No,No,0,Office Worker,Current,26.9,Delayed Recovery
+72,Male,Hovedstaden,Cardiovascular,Delta,Mild,High,No,No,No,No,Yes,3,Teacher,Never,23.0,Delayed Recovery
+51,Male,Nordjylland,Diabetes,XBB.1.5,Severe,Critical,Yes,No,No,No,Yes,3,Student,Former,19.5,Delayed Recovery
+51,Female,Syddanmark,Obesity,Beta,Mild,High,No,No,No,No,No,0,Student,Former,25.5,Delayed Recovery
+62,Female,Hovedstaden,Obesity,Delta,Moderate,Moderate,No,No,No,Yes,No,0,Healthcare,Current,26.3,Fast Recovery
+43,Female,Sjælland,Asthma,Alpha,Moderate,Critical,No,No,No,No,Yes,3,Unemployed,Former,28.3,Delayed Recovery
+87,Male,Syddanmark,Cardiovascular,Omicron,Moderate,Low,Yes,No,No,No,No,0,Teacher,Former,23.7,Fast Recovery
+36,Male,Midtjylland,Diabetes,Omicron,Severe,Moderate,Yes,No,No,Yes,No,0,Teacher,Former,21.4,Delayed Recovery
+42,Male,Midtjylland,Obesity,Beta,Mild,Low,No,No,No,Yes,Yes,2,Driver,Former,21.0,Delayed Recovery
+34,Female,Midtjylland,Asthma,Alpha,Severe,Critical,No,No,No,Yes,No,0,Healthcare,Former,25.1,Delayed Recovery
+63,Female,Syddanmark,Asthma,Omicron,Severe,Critical,No,No,No,No,No,0,Office Worker,Never,40.7,Delayed Recovery
+58,Male,Sjælland,Obesity,Alpha,Moderate,Low,No,No,No,Yes,No,0,Teacher,Current,19.7,Delayed Recovery
+25,Female,Hovedstaden,Cardiovascular,Delta,Severe,Moderate,No,No,No,No,No,0,Office Worker,Current,27.5,Typical Recovery
+41,Female,Syddanmark,Obesity,Omicron,Mild,High,No,No,No,No,Yes,3,Healthcare,Never,32.8,Delayed Recovery
+61,Female,Hovedstaden,Asthma,Beta,Severe,Low,No,No,No,No,No,0,Teacher,Never,28.7,Fast Recovery
+75,Male,Nordjylland,Asthma,Delta,Severe,Moderate,No,No,No,No,No,0,Driver,Former,27.8,Typical Recovery
+56,Female,Nordjylland,Cardiovascular,Beta,Severe,Critical,No,No,No,No,No,0,Teacher,Current,22.8,Delayed Recovery
+87,Female,Sjælland,Diabetes,Alpha,Severe,Moderate,Yes,No,No,No,No,0,Healthcare,Former,30.9,Typical Recovery
+45,Female,Sjælland,Diabetes,Alpha,Moderate,Moderate,Yes,No,No,Yes,No,0,Unemployed,Current,18.0,Delayed Recovery
+86,Male,Sjælland,Diabetes,Alpha,Moderate,Low,No,No,No,No,No,0,Unemployed,Never,29.4,Fast Recovery
+62,Female,Syddanmark,Cardiovascular,XBB.1.5,Moderate,Critical,No,No,No,Yes,No,0,Driver,Never,27.1,Delayed Recovery
+31,Female,Sjælland,Hypertension,XBB.1.5,Severe,Moderate,No,No,No,Yes,No,0,Driver,Never,26.5,Delayed Recovery
+66,Male,Sjælland,Obesity,Alpha,Mild,Critical,Yes,No,No,Yes,No,0,Driver,Current,32.3,Delayed Recovery
+52,Male,Sjælland,Asthma,Delta,Mild,Low,No,No,No,No,Yes,3,Teacher,Former,24.1,Fast Recovery
+19,Female,Nordjylland,Diabetes,Beta,Mild,High,No,No,No,Yes,Yes,1,Teacher,Current,32.9,Delayed Recovery
+72,Male,Midtjylland,Obesity,Beta,Severe,Moderate,No,No,No,No,Yes,3,Office Worker,Former,21.4,Typical Recovery
+18,Male,Midtjylland,Diabetes,Omicron,Severe,High,Yes,No,No,No,Yes,3,Driver,Never,19.2,Delayed Recovery
+47,Male,Nordjylland,Diabetes,Delta,Mild,Low,No,No,No,No,No,0,Driver,Never,35.3,Fast Recovery
+56,Female,Nordjylland,Cardiovascular,Delta,Moderate,High,Yes,Yes,No,No,Yes,1,Student,Current,17.2,Delayed Recovery
+18,Female,Midtjylland,Hypertension,Delta,Mild,Low,Yes,No,No,Yes,No,0,Healthcare,Former,35.6,Delayed Recovery
+57,Male,Midtjylland,Hypertension,Omicron,Mild,High,No,No,No,No,No,0,Unemployed,Current,25.6,Delayed Recovery
+57,Female,Hovedstaden,Hypertension,Alpha,Mild,High,No,No,No,No,No,0,Teacher,Former,22.8,Delayed Recovery
+42,Male,Nordjylland,Asthma,Alpha,Moderate,Moderate,Yes,No,No,No,Yes,3,Unemployed,Former,26.2,Typical Recovery
+49,Male,Sjælland,Cardiovascular,Alpha,Mild,Low,No,No,No,Yes,Yes,2,Driver,Never,16.1,Delayed Recovery
+40,Female,Nordjylland,Cardiovascular,Delta,Moderate,Critical,No,No,No,Yes,No,0,Teacher,Current,21.3,Typical Recovery
+52,Male,Sjælland,Cardiovascular,Omicron,Moderate,Moderate,No,No,No,No,No,0,Driver,Never,16.2,Typical Recovery
+76,Male,Nordjylland,Obesity,Omicron,Severe,High,Yes,No,No,Yes,Yes,3,Healthcare,Former,21.5,Delayed Recovery
+58,Male,Midtjylland,Diabetes,Alpha,Severe,High,No,No,No,No,No,0,Teacher,Never,28.4,Delayed Recovery
+71,Male,Sjælland,Obesity,Beta,Severe,High,Yes,No,No,Yes,Yes,1,Driver,Former,26.6,Delayed Recovery
+56,Female,Sjælland,Obesity,Omicron,Mild,Low,No,No,No,No,No,0,Driver,Former,29.1,Fast Recovery
+29,Female,Syddanmark,Cardiovascular,Delta,Severe,High,No,No,No,Yes,Yes,3,Driver,Current,25.2,Delayed Recovery
+27,Male,Nordjylland,Asthma,Omicron,Severe,Critical,No,No,No,Yes,No,0,Teacher,Never,31.8,Delayed Recovery
+49,Female,Hovedstaden,Cardiovascular,XBB.1.5,Moderate,Critical,No,No,No,No,Yes,1,Driver,Never,21.7,Delayed Recovery
+21,Male,Sjælland,Hypertension,XBB.1.5,Moderate,Critical,No,No,No,No,No,0,Teacher,Never,31.1,Delayed Recovery
+43,Male,Syddanmark,Cardiovascular,Omicron,Moderate,Moderate,No,No,No,No,No,0,Driver,Current,38.8,Typical Recovery
+41,Male,Sjælland,Obesity,XBB.1.5,Mild,Moderate,Yes,No,No,No,No,0,Unemployed,Current,24.3,Typical Recovery
+61,Female,Nordjylland,Diabetes,Delta,Severe,High,No,No,No,No,No,0,Teacher,Never,21.5,Delayed Recovery
+27,Female,Midtjylland,Asthma,Omicron,Moderate,Moderate,No,No,No,Yes,Yes,3,Teacher,Current,33.3,Delayed Recovery
+89,Female,Hovedstaden,Cardiovascular,Omicron,Mild,Critical,No,No,No,Yes,No,0,Driver,Never,26.2,Delayed Recovery
+60,Male,Syddanmark,Cardiovascular,Omicron,Mild,Critical,No,No,No,Yes,No,0,Unemployed,Former,35.4,Delayed Recovery
+30,Male,Sjælland,Obesity,Beta,Severe,High,No,No,No,Yes,Yes,1,Unemployed,Never,28.7,Delayed Recovery
+25,Female,Syddanmark,Diabetes,Beta,Severe,High,No,No,No,Yes,No,0,Office Worker,Former,25.4,Delayed Recovery
+69,Male,Hovedstaden,Diabetes,Omicron,Severe,Critical,Yes,No,No,No,Yes,2,Unemployed,Never,25.4,Delayed Recovery
+25,Female,Midtjylland,Asthma,XBB.1.5,Severe,Low,No,No,No,Yes,Yes,2,Student,Former,28.0,Delayed Recovery
+24,Male,Hovedstaden,Hypertension,Alpha,Moderate,Low,Yes,No,No,Yes,No,0,Teacher,Current,22.4,Typical Recovery
+47,Female,Midtjylland,Diabetes,Alpha,Moderate,Critical,Yes,Yes,Yes,No,No,0,Office Worker,Current,21.7,Delayed Recovery
+88,Male,Hovedstaden,Obesity,Alpha,Moderate,Moderate,No,No,No,No,Yes,1,Healthcare,Current,20.3,Typical Recovery
+52,Male,Midtjylland,Hypertension,Beta,Severe,Moderate,No,No,No,No,Yes,2,Unemployed,Current,23.5,Delayed Recovery
+43,Male,Syddanmark,Diabetes,Omicron,Moderate,Moderate,No,No,No,Yes,No,0,Healthcare,Never,28.9,Delayed Recovery
+70,Male,Sjælland,Cardiovascular,Delta,Severe,High,Yes,No,No,No,No,0,Teacher,Never,26.3,Delayed Recovery
+39,Female,Nordjylland,Cardiovascular,Alpha,Severe,Critical,No,No,No,Yes,Yes,3,Unemployed,Never,24.9,Delayed Recovery
+30,Female,Hovedstaden,Diabetes,Delta,Mild,Critical,No,No,No,No,No,0,Healthcare,Never,20.9,Delayed Recovery
+85,Male,Syddanmark,Asthma,Alpha,Severe,Critical,No,No,No,No,No,0,Office Worker,Never,18.9,Delayed Recovery
+79,Male,Midtjylland,Asthma,Omicron,Mild,High,Yes,No,No,No,Yes,3,Student,Never,32.3,Delayed Recovery
+59,Male,Hovedstaden,Asthma,Delta,Moderate,Critical,No,No,No,No,No,0,Unemployed,Never,24.7,Delayed Recovery
+37,Female,Nordjylland,Cardiovascular,Alpha,Mild,Moderate,No,No,No,No,Yes,3,Teacher,Never,23.9,Typical Recovery
+33,Male,Midtjylland,Hypertension,Beta,Moderate,High,No,No,No,No,Yes,1,Office Worker,Former,26.0,Delayed Recovery
+55,Female,Nordjylland,Hypertension,Omicron,Mild,Low,No,No,No,Yes,No,0,Healthcare,Never,16.3,Delayed Recovery
+73,Male,Hovedstaden,Cardiovascular,Alpha,Moderate,Low,No,No,No,Yes,Yes,2,Driver,Former,20.1,Typical Recovery
+36,Male,Hovedstaden,Cardiovascular,Alpha,Moderate,High,No,No,No,Yes,Yes,3,Student,Former,21.6,Delayed Recovery
+18,Female,Syddanmark,Cardiovascular,Omicron,Severe,Critical,No,No,No,No,No,0,Teacher,Never,28.8,Delayed Recovery
+41,Female,Nordjylland,Cardiovascular,Omicron,Mild,High,No,No,No,Yes,No,0,Healthcare,Never,17.6,Delayed Recovery
+48,Male,Syddanmark,Cardiovascular,Alpha,Severe,Low,Yes,No,No,No,Yes,2,Office Worker,Current,21.5,Fast Recovery
+73,Male,Nordjylland,Obesity,Omicron,Moderate,High,No,No,No,No,Yes,3,Healthcare,Never,21.1,Delayed Recovery
+37,Female,Sjælland,Cardiovascular,Beta,Moderate,Moderate,No,No,No,Yes,No,0,Office Worker,Never,14.1,Delayed Recovery
+21,Male,Nordjylland,Diabetes,Beta,Severe,Low,No,No,No,No,No,0,Unemployed,Never,24.4,Fast Recovery
+36,Female,Nordjylland,Obesity,Delta,Mild,Low,No,No,No,No,Yes,1,Student,Former,34.8,Fast Recovery
+28,Male,Syddanmark,Hypertension,XBB.1.5,Moderate,Moderate,No,No,No,No,No,0,Unemployed,Current,32.1,Typical Recovery
+43,Female,Nordjylland,Cardiovascular,XBB.1.5,Moderate,Low,No,No,No,No,No,0,Unemployed,Current,26.7,Fast Recovery
+85,Male,Hovedstaden,Asthma,XBB.1.5,Severe,Low,No,No,No,No,No,0,Healthcare,Current,22.3,Delayed Recovery
+48,Female,Midtjylland,Asthma,Alpha,Mild,Moderate,No,No,No,No,Yes,2,Unemployed,Never,27.0,Typical Recovery
+76,Male,Syddanmark,Hypertension,XBB.1.5,Mild,High,No,No,No,No,Yes,3,Student,Never,25.1,Delayed Recovery
+70,Male,Hovedstaden,Asthma,XBB.1.5,Moderate,Moderate,No,No,No,No,Yes,2,Student,Former,21.7,Typical Recovery
+66,Female,Syddanmark,Hypertension,Beta,Mild,Low,No,No,No,No,No,0,Driver,Never,27.8,Fast Recovery
+73,Male,Midtjylland,Hypertension,Beta,Mild,High,No,No,No,Yes,Yes,1,Unemployed,Never,29.4,Delayed Recovery
+30,Female,Syddanmark,Asthma,Beta,Moderate,Moderate,Yes,No,No,Yes,No,0,Teacher,Never,26.2,Delayed Recovery
+56,Female,Hovedstaden,Obesity,Alpha,Mild,Critical,No,No,No,No,Yes,1,Unemployed,Former,22.9,Delayed Recovery
+29,Female,Sjælland,Cardiovascular,Alpha,Mild,High,No,No,No,Yes,Yes,3,Healthcare,Former,18.9,Delayed Recovery
+59,Male,Hovedstaden,Cardiovascular,Omicron,Moderate,Moderate,Yes,No,No,Yes,No,0,Student,Never,26.0,Delayed Recovery
+48,Female,Nordjylland,Hypertension,Omicron,Mild,Low,Yes,No,No,Yes,Yes,3,Office Worker,Former,31.4,Delayed Recovery
+63,Female,Syddanmark,Cardiovascular,Alpha,Moderate,Critical,No,No,No,No,Yes,3,Teacher,Current,28.7,Delayed Recovery
+50,Female,Midtjylland,Cardiovascular,Alpha,Moderate,Low,No,No,No,No,No,0,Healthcare,Never,29.5,Fast Recovery
+57,Male,Hovedstaden,Asthma,Alpha,Severe,Low,No,No,No,Yes,No,0,Healthcare,Never,29.7,Delayed Recovery
+76,Female,Midtjylland,Obesity,XBB.1.5,Severe,Critical,No,No,No,Yes,No,0,Unemployed,Never,24.5,Delayed Recovery
+31,Male,Syddanmark,Hypertension,Omicron,Severe,Low,No,No,No,No,Yes,1,Driver,Never,26.4,Fast Recovery
+56,Male,Nordjylland,Cardiovascular,Alpha,Mild,High,Yes,No,No,Yes,No,0,Driver,Former,27.4,Delayed Recovery
+43,Female,Midtjylland,Cardiovascular,XBB.1.5,Moderate,Moderate,No,No,No,Yes,No,0,Driver,Current,29.0,Delayed Recovery
+41,Male,Nordjylland,Asthma,Alpha,Moderate,Critical,No,No,No,Yes,Yes,3,Healthcare,Never,22.9,Delayed Recovery
+79,Male,Midtjylland,Hypertension,Delta,Mild,High,No,No,No,No,No,0,Student,Current,25.5,Delayed Recovery
+53,Male,Nordjylland,Obesity,Beta,Severe,Critical,No,No,No,No,No,0,Unemployed,Former,30.0,Delayed Recovery
+74,Male,Hovedstaden,Asthma,Delta,Moderate,Moderate,No,No,No,Yes,No,0,Driver,Former,25.0,Delayed Recovery
+59,Male,Midtjylland,Obesity,XBB.1.5,Severe,Low,Yes,No,No,No,Yes,2,Student,Former,20.3,Fast Recovery
+73,Female,Syddanmark,Diabetes,Delta,Moderate,Moderate,No,No,No,No,Yes,1,Unemployed,Former,26.1,Typical Recovery
+49,Female,Sjælland,Cardiovascular,Beta,Severe,High,No,No,No,No,Yes,3,Student,Current,28.5,Delayed Recovery
+25,Female,Nordjylland,Asthma,XBB.1.5,Moderate,High,No,No,No,No,Yes,3,Teacher,Former,33.2,Delayed Recovery
+44,Male,Sjælland,Diabetes,Alpha,Mild,Low,Yes,No,No,No,No,0,Student,Current,30.8,Fast Recovery
+37,Male,Nordjylland,Cardiovascular,Beta,Moderate,Critical,Yes,No,No,No,No,0,Teacher,Never,18.3,Delayed Recovery
+63,Female,Hovedstaden,Diabetes,Delta,Severe,Moderate,No,No,No,No,No,0,Teacher,Current,16.3,Typical Recovery
+40,Female,Hovedstaden,Diabetes,Omicron,Severe,Moderate,Yes,No,No,No,No,0,Student,Current,24.3,Typical Recovery
+87,Male,Syddanmark,Hypertension,Delta,Severe,High,No,No,No,No,Yes,2,Driver,Current,26.7,Delayed Recovery
+89,Female,Sjælland,Hypertension,XBB.1.5,Moderate,Critical,No,No,No,No,Yes,3,Unemployed,Never,17.2,Delayed Recovery
+32,Male,Nordjylland,Diabetes,XBB.1.5,Moderate,Low,No,No,No,Yes,No,0,Student,Former,25.3,Delayed Recovery
+56,Female,Midtjylland,Cardiovascular,Beta,Moderate,High,No,No,No,No,No,0,Healthcare,Never,26.9,Delayed Recovery
+67,Female,Nordjylland,Cardiovascular,Delta,Severe,Low,Yes,No,No,Yes,No,0,Healthcare,Current,22.4,Fast Recovery
+23,Male,Hovedstaden,Cardiovascular,Beta,Severe,Moderate,Yes,No,No,Yes,Yes,2,Unemployed,Current,23.8,Delayed Recovery
+22,Male,Hovedstaden,Cardiovascular,Alpha,Severe,Low,No,No,No,No,Yes,2,Unemployed,Current,22.6,Fast Recovery
+20,Female,Midtjylland,Diabetes,Alpha,Severe,Low,No,No,No,Yes,No,0,Teacher,Never,32.6,Delayed Recovery
+25,Female,Sjælland,Hypertension,Beta,Severe,High,No,No,No,No,No,0,Office Worker,Never,26.5,Delayed Recovery
+36,Female,Nordjylland,Asthma,XBB.1.5,Moderate,High,No,No,No,Yes,Yes,3,Office Worker,Current,21.9,Delayed Recovery
+25,Female,Syddanmark,Cardiovascular,Omicron,Mild,Critical,No,No,No,No,No,0,Unemployed,Never,21.4,Delayed Recovery
+73,Male,Sjælland,Cardiovascular,Alpha,Severe,Low,Yes,No,No,No,Yes,3,Office Worker,Current,25.8,Fast Recovery
+89,Male,Nordjylland,Cardiovascular,Beta,Mild,Low,Yes,No,No,No,Yes,1,Unemployed,Current,26.6,Fast Recovery
+64,Male,Sjælland,Cardiovascular,Delta,Moderate,Low,Yes,No,No,Yes,Yes,1,Teacher,Current,19.2,Delayed Recovery
+43,Male,Midtjylland,Cardiovascular,XBB.1.5,Moderate,High,No,No,No,No,No,0,Student,Current,34.0,Delayed Recovery
+65,Female,Midtjylland,Diabetes,Delta,Moderate,High,No,No,No,No,No,0,Office Worker,Never,20.5,Delayed Recovery
+85,Female,Syddanmark,Obesity,Beta,Mild,High,No,No,No,Yes,No,0,Student,Former,30.3,Delayed Recovery
+50,Female,Nordjylland,Diabetes,Beta,Severe,Low,Yes,No,No,Yes,No,0,Teacher,Former,26.3,Delayed Recovery
+86,Female,Syddanmark,Cardiovascular,Beta,Moderate,Critical,No,No,No,Yes,Yes,3,Driver,Former,31.7,Delayed Recovery
+88,Female,Hovedstaden,Cardiovascular,XBB.1.5,Moderate,High,No,No,No,Yes,No,0,Driver,Never,23.9,Delayed Recovery
+54,Male,Midtjylland,Hypertension,Beta,Severe,Low,No,No,No,Yes,Yes,2,Student,Never,22.3,Delayed Recovery
+25,Male,Midtjylland,Diabetes,XBB.1.5,Mild,Critical,No,No,No,No,Yes,3,Teacher,Never,24.8,Delayed Recovery
+48,Female,Syddanmark,Asthma,Alpha,Severe,Moderate,Yes,No,No,No,Yes,1,Driver,Former,25.8,Typical Recovery
+69,Male,Syddanmark,Asthma,Omicron,Moderate,High,No,No,No,Yes,Yes,3,Unemployed,Current,25.0,Delayed Recovery
+39,Female,Syddanmark,Obesity,Omicron,Severe,Moderate,No,No,No,Yes,Yes,1,Driver,Current,22.8,Delayed Recovery
+85,Female,Hovedstaden,Hypertension,XBB.1.5,Moderate,Moderate,Yes,No,No,Yes,No,0,Driver,Former,33.7,Delayed Recovery
+29,Female,Midtjylland,Asthma,Beta,Mild,Low,Yes,No,No,No,Yes,2,Driver,Never,29.3,Typical Recovery
+86,Female,Syddanmark,Cardiovascular,Beta,Severe,Critical,Yes,Yes,No,Yes,Yes,2,Healthcare,Never,20.7,Delayed Recovery
+52,Male,Midtjylland,Hypertension,XBB.1.5,Moderate,Low,No,No,No,Yes,Yes,2,Student,Current,27.8,Delayed Recovery
+29,Female,Nordjylland,Cardiovascular,Delta,Severe,Moderate,No,No,No,Yes,No,0,Unemployed,Never,23.2,Delayed Recovery
+74,Male,Hovedstaden,Cardiovascular,Omicron,Severe,Low,No,No,No,No,No,0,Unemployed,Never,27.1,Fast Recovery
+18,Female,Nordjylland,Obesity,XBB.1.5,Severe,High,Yes,No,No,Yes,No,0,Healthcare,Former,19.7,Delayed Recovery
+29,Female,Sjælland,Diabetes,Delta,Mild,Low,No,No,No,Yes,No,0,Teacher,Never,27.8,Delayed Recovery
+82,Male,Syddanmark,Asthma,XBB.1.5,Severe,Critical,Yes,No,No,No,No,0,Office Worker,Never,25.1,Delayed Recovery
+81,Male,Syddanmark,Diabetes,Beta,Severe,Critical,Yes,No,No,Yes,Yes,3,Unemployed,Current,28.4,Delayed Recovery
+33,Female,Nordjylland,Diabetes,Alpha,Moderate,Critical,No,No,No,Yes,No,0,Unemployed,Current,24.5,Delayed Recovery
+69,Female,Nordjylland,Cardiovascular,Delta,Severe,Critical,No,No,No,Yes,Yes,1,Student,Never,20.4,Delayed Recovery
+59,Female,Sjælland,Obesity,Beta,Severe,Moderate,No,No,No,No,Yes,1,Driver,Current,23.1,Typical Recovery
+54,Female,Syddanmark,Cardiovascular,Alpha,Severe,Critical,Yes,Yes,Yes,No,Yes,2,Driver,Former,28.7,Delayed Recovery
+80,Female,Hovedstaden,Obesity,Alpha,Mild,Moderate,No,No,No,Yes,Yes,2,Teacher,Never,33.5,Delayed Recovery
+30,Female,Sjælland,Obesity,XBB.1.5,Moderate,Moderate,No,No,No,No,No,0,Healthcare,Former,30.8,Typical Recovery
+21,Male,Hovedstaden,Hypertension,Omicron,Mild,Critical,No,No,No,Yes,No,0,Teacher,Former,34.3,Delayed Recovery
+82,Male,Hovedstaden,Asthma,Alpha,Severe,High,Yes,No,No,No,No,0,Office Worker,Current,33.0,Delayed Recovery
+87,Female,Sjælland,Hypertension,Omicron,Moderate,High,Yes,No,No,Yes,Yes,1,Healthcare,Current,19.5,Delayed Recovery
+88,Female,Nordjylland,Diabetes,Delta,Severe,Moderate,No,No,No,Yes,Yes,3,Office Worker,Never,17.8,Delayed Recovery
+74,Female,Syddanmark,Cardiovascular,Beta,Mild,Moderate,No,No,No,No,Yes,2,Unemployed,Never,19.7,Typical Recovery
+41,Female,Nordjylland,Asthma,Omicron,Mild,High,Yes,No,No,No,No,0,Driver,Former,26.0,Delayed Recovery
+68,Female,Sjælland,Cardiovascular,XBB.1.5,Mild,Moderate,No,No,No,Yes,Yes,3,Unemployed,Current,28.7,Delayed Recovery
+37,Male,Nordjylland,Cardiovascular,Alpha,Severe,Critical,No,No,No,Yes,Yes,1,Office Worker,Former,21.0,Delayed Recovery
+69,Female,Syddanmark,Cardiovascular,Delta,Mild,Low,Yes,No,No,Yes,No,0,Driver,Former,29.1,Delayed Recovery
+44,Female,Sjælland,Hypertension,Omicron,Severe,High,Yes,No,No,No,No,0,Student,Current,32.8,Delayed Recovery
+68,Male,Syddanmark,Hypertension,Beta,Moderate,Moderate,No,No,No,No,No,0,Unemployed,Current,25.1,Typical Recovery
+77,Male,Syddanmark,Obesity,Omicron,Mild,Moderate,No,No,No,No,No,0,Driver,Never,24.9,Typical Recovery
+65,Female,Sjælland,Hypertension,Beta,Mild,Moderate,No,No,No,No,Yes,2,Driver,Current,33.1,Typical Recovery
+57,Female,Midtjylland,Obesity,Delta,Severe,High,No,No,No,No,Yes,2,Teacher,Current,26.8,Delayed Recovery
+80,Male,Hovedstaden,Cardiovascular,Alpha,Moderate,High,No,No,No,Yes,Yes,3,Unemployed,Current,25.4,Delayed Recovery
+29,Male,Nordjylland,Cardiovascular,Delta,Severe,High,No,No,No,Yes,No,0,Driver,Never,20.7,Delayed Recovery
+62,Male,Nordjylland,Diabetes,Beta,Moderate,Moderate,No,No,No,No,Yes,1,Driver,Former,26.8,Typical Recovery
+80,Male,Syddanmark,Cardiovascular,Omicron,Severe,Critical,No,No,No,Yes,No,0,Teacher,Current,22.8,Delayed Recovery
+77,Male,Midtjylland,Hypertension,Alpha,Mild,High,No,No,No,No,No,0,Unemployed,Current,19.3,Delayed Recovery
+41,Male,Midtjylland,Diabetes,Delta,Mild,High,No,No,No,Yes,No,0,Student,Former,19.7,Delayed Recovery
+72,Female,Midtjylland,Cardiovascular,Delta,Mild,Critical,Yes,No,No,No,Yes,3,Student,Former,30.4,Delayed Recovery
+35,Male,Syddanmark,Diabetes,Alpha,Severe,High,No,No,No,Yes,No,0,Unemployed,Former,20.6,Delayed Recovery
+50,Female,Midtjylland,Obesity,Beta,Mild,Moderate,Yes,No,No,No,No,0,Driver,Former,21.4,Typical Recovery
+36,Male,Syddanmark,Hypertension,Omicron,Moderate,Critical,No,No,No,No,No,0,Teacher,Former,23.9,Delayed Recovery
+29,Female,Sjælland,Cardiovascular,Delta,Severe,Moderate,No,No,No,Yes,No,0,Teacher,Current,26.5,Delayed Recovery
+41,Female,Hovedstaden,Asthma,Delta,Moderate,Low,No,No,No,No,No,0,Driver,Never,29.7,Fast Recovery
+49,Male,Midtjylland,Cardiovascular,Omicron,Mild,Moderate,Yes,No,No,No,Yes,2,Unemployed,Current,27.1,Delayed Recovery
+43,Male,Syddanmark,Asthma,Beta,Moderate,Moderate,Yes,No,No,Yes,No,0,Student,Never,20.2,Delayed Recovery
+47,Female,Sjælland,Obesity,Omicron,Mild,Critical,Yes,Yes,No,No,No,0,Office Worker,Former,32.8,Delayed Recovery
+38,Female,Midtjylland,Cardiovascular,Delta,Moderate,Moderate,No,No,No,No,No,0,Unemployed,Current,29.7,Typical Recovery
+36,Male,Sjælland,Asthma,XBB.1.5,Severe,Low,No,No,No,Yes,No,0,Healthcare,Never,27.4,Delayed Recovery
+77,Female,Hovedstaden,Cardiovascular,Alpha,Mild,Moderate,No,No,No,Yes,Yes,3,Driver,Current,22.8,Delayed Recovery
+51,Female,Nordjylland,Asthma,Alpha,Moderate,High,No,No,No,No,No,0,Unemployed,Current,32.8,Delayed Recovery
+88,Female,Midtjylland,Obesity,XBB.1.5,Severe,Moderate,No,No,No,Yes,No,0,Unemployed,Current,19.4,Delayed Recovery
+34,Female,Syddanmark,Cardiovascular,Alpha,Severe,High,No,No,No,No,No,0,Driver,Current,31.6,Delayed Recovery
+75,Female,Nordjylland,Asthma,Beta,Moderate,Low,No,No,No,No,Yes,2,Office Worker,Current,25.1,Fast Recovery
+56,Female,Hovedstaden,Obesity,Alpha,Moderate,Low,Yes,No,No,No,No,0,Driver,Former,22.5,Fast Recovery
+29,Female,Midtjylland,Obesity,Alpha,Moderate,Low,Yes,No,No,Yes,Yes,2,Driver,Former,29.6,Delayed Recovery
+66,Female,Syddanmark,Asthma,XBB.1.5,Severe,High,No,No,No,No,Yes,1,Office Worker,Never,25.7,Delayed Recovery
+86,Female,Sjælland,Obesity,Delta,Severe,Moderate,Yes,No,No,Yes,Yes,2,Unemployed,Former,24.4,Delayed Recovery
+75,Female,Hovedstaden,Cardiovascular,Beta,Mild,High,No,No,No,Yes,No,0,Unemployed,Never,35.1,Delayed Recovery
+57,Female,Nordjylland,Cardiovascular,XBB.1.5,Mild,Low,No,No,No,No,No,0,Healthcare,Former,22.6,Fast Recovery
+84,Female,Hovedstaden,Obesity,Alpha,Severe,Low,No,No,No,Yes,Yes,2,Office Worker,Never,21.6,Delayed Recovery
+72,Male,Sjælland,Cardiovascular,Delta,Moderate,Moderate,Yes,No,No,Yes,Yes,3,Healthcare,Former,16.2,Delayed Recovery
+74,Male,Syddanmark,Asthma,Alpha,Mild,Low,No,No,No,Yes,Yes,3,Office Worker,Never,27.8,Delayed Recovery
+80,Male,Midtjylland,Diabetes,Beta,Mild,Critical,Yes,Yes,No,No,Yes,3,Student,Current,27.3,Delayed Recovery
+72,Female,Nordjylland,Cardiovascular,Beta,Moderate,High,No,No,No,No,No,0,Office Worker,Current,22.1,Delayed Recovery
+65,Male,Sjælland,Obesity,XBB.1.5,Severe,Moderate,Yes,No,No,No,Yes,3,Student,Never,25.8,Typical Recovery
+21,Female,Hovedstaden,Diabetes,Alpha,Severe,Critical,Yes,Yes,Yes,No,No,0,Healthcare,Current,31.5,Delayed Recovery
+61,Female,Syddanmark,Obesity,Beta,Mild,Moderate,No,No,No,Yes,Yes,3,Driver,Never,20.0,Delayed Recovery
+83,Female,Syddanmark,Asthma,Alpha,Mild,High,No,No,No,No,Yes,2,Student,Never,22.3,Delayed Recovery
+33,Male,Hovedstaden,Cardiovascular,Delta,Mild,High,No,No,No,No,No,0,Office Worker,Former,17.0,Delayed Recovery
+86,Male,Syddanmark,Hypertension,Delta,Moderate,Low,No,No,No,No,Yes,1,Teacher,Never,16.6,Fast Recovery
+20,Male,Hovedstaden,Obesity,Beta,Mild,Low,Yes,No,No,No,No,0,Office Worker,Former,19.6,Fast Recovery
+33,Male,Syddanmark,Hypertension,Delta,Moderate,Critical,Yes,Yes,No,No,No,0,Unemployed,Former,31.3,Delayed Recovery
+71,Male,Hovedstaden,Asthma,Beta,Severe,Moderate,No,No,No,Yes,Yes,2,Healthcare,Former,26.1,Delayed Recovery
+41,Female,Midtjylland,Asthma,Beta,Moderate,Low,No,No,No,Yes,Yes,3,Teacher,Never,21.0,Delayed Recovery
+86,Female,Sjælland,Obesity,Omicron,Moderate,Moderate,No,No,No,No,No,0,Unemployed,Former,25.4,Typical Recovery
+55,Male,Midtjylland,Cardiovascular,Alpha,Mild,High,No,No,No,No,Yes,2,Healthcare,Current,28.4,Delayed Recovery
+44,Male,Syddanmark,Cardiovascular,Alpha,Severe,High,Yes,Yes,No,Yes,Yes,1,Student,Never,26.7,Delayed Recovery
+60,Male,Midtjylland,Diabetes,XBB.1.5,Mild,Moderate,No,No,No,No,No,0,Unemployed,Never,28.8,Typical Recovery
+89,Female,Sjælland,Asthma,Omicron,Moderate,Critical,No,No,No,No,No,0,Unemployed,Current,29.3,Delayed Recovery
+37,Female,Syddanmark,Diabetes,Beta,Moderate,Critical,No,No,No,Yes,Yes,3,Teacher,Never,30.0,Delayed Recovery
+68,Male,Hovedstaden,Diabetes,Alpha,Mild,Moderate,No,No,No,No,Yes,2,Teacher,Former,24.5,Typical Recovery
+68,Female,Midtjylland,Diabetes,Omicron,Mild,Low,No,No,No,Yes,Yes,2,Office Worker,Never,23.2,Delayed Recovery
+47,Male,Syddanmark,Asthma,Delta,Mild,High,No,No,No,No,No,0,Student,Former,34.7,Delayed Recovery
+76,Female,Syddanmark,Asthma,Omicron,Severe,Moderate,No,No,No,No,No,0,Teacher,Current,12.4,Typical Recovery
+19,Female,Syddanmark,Obesity,Alpha,Severe,Moderate,Yes,No,No,No,Yes,3,Healthcare,Never,26.1,Typical Recovery
+72,Female,Midtjylland,Asthma,Omicron,Moderate,Critical,No,No,No,No,No,0,Student,Never,23.4,Delayed Recovery
+75,Male,Syddanmark,Diabetes,Alpha,Mild,Low,No,No,No,Yes,No,0,Student,Current,28.7,Delayed Recovery
+31,Male,Nordjylland,Obesity,Omicron,Mild,Low,No,No,No,Yes,No,0,Driver,Never,20.2,Delayed Recovery
+59,Female,Midtjylland,Cardiovascular,Delta,Severe,High,No,No,No,No,No,0,Student,Current,19.3,Delayed Recovery
+87,Male,Syddanmark,Cardiovascular,Beta,Mild,High,No,No,No,No,No,0,Driver,Former,28.2,Delayed Recovery
+33,Female,Hovedstaden,Cardiovascular,Alpha,Moderate,Critical,No,No,No,Yes,No,0,Teacher,Never,19.8,Delayed Recovery
+38,Male,Sjælland,Asthma,XBB.1.5,Mild,Moderate,No,No,No,No,No,0,Healthcare,Never,21.9,Typical Recovery
+60,Female,Sjælland,Cardiovascular,Delta,Severe,Critical,Yes,No,No,No,No,0,Student,Former,22.0,Delayed Recovery
+28,Male,Midtjylland,Diabetes,Delta,Mild,High,No,No,No,Yes,Yes,2,Student,Never,25.2,Delayed Recovery
+71,Female,Nordjylland,Obesity,Beta,Mild,Low,No,No,No,No,No,0,Teacher,Current,27.5,Fast Recovery
+50,Male,Hovedstaden,Diabetes,Alpha,Mild,High,Yes,No,No,No,No,0,Driver,Current,19.9,Delayed Recovery
+70,Male,Sjælland,Asthma,XBB.1.5,Mild,High,No,No,No,Yes,No,0,Driver,Former,29.5,Delayed Recovery
+60,Male,Syddanmark,Asthma,Omicron,Mild,Critical,No,No,No,Yes,No,0,Student,Current,26.4,Delayed Recovery
+45,Female,Nordjylland,Obesity,XBB.1.5,Mild,Low,No,No,No,Yes,Yes,3,Student,Never,27.2,Delayed Recovery
+26,Female,Nordjylland,Cardiovascular,XBB.1.5,Moderate,Moderate,Yes,No,No,No,Yes,2,Healthcare,Current,27.0,Delayed Recovery
+42,Male,Syddanmark,Obesity,Omicron,Moderate,Low,Yes,No,No,No,No,0,Office Worker,Former,27.0,Fast Recovery
+31,Female,Syddanmark,Obesity,Omicron,Severe,High,Yes,No,No,Yes,Yes,2,Teacher,Former,24.6,Delayed Recovery
+86,Female,Hovedstaden,Asthma,Omicron,Severe,Moderate,No,No,No,No,No,0,Office Worker,Former,28.9,Typical Recovery
+66,Male,Midtjylland,Hypertension,XBB.1.5,Severe,High,No,No,No,No,No,0,Healthcare,Current,20.3,Delayed Recovery
+56,Male,Syddanmark,Cardiovascular,Delta,Severe,Moderate,No,No,No,Yes,Yes,1,Unemployed,Former,15.4,Delayed Recovery
+57,Male,Syddanmark,Cardiovascular,Omicron,Mild,Critical,No,No,No,Yes,Yes,3,Driver,Former,26.5,Delayed Recovery
+43,Female,Hovedstaden,Asthma,XBB.1.5,Moderate,High,No,No,No,Yes,Yes,3,Office Worker,Never,23.8,Delayed Recovery
+58,Female,Sjælland,Asthma,Omicron,Mild,Critical,Yes,No,No,Yes,No,0,Driver,Never,26.8,Delayed Recovery
+29,Male,Midtjylland,Hypertension,Alpha,Mild,High,Yes,Yes,Yes,No,No,0,Driver,Current,18.3,Delayed Recovery
+32,Male,Hovedstaden,Asthma,XBB.1.5,Mild,High,No,No,No,Yes,Yes,1,Unemployed,Current,31.9,Delayed Recovery
+31,Female,Midtjylland,Cardiovascular,Omicron,Mild,Low,Yes,No,No,No,Yes,3,Office Worker,Never,20.1,Fast Recovery
+81,Male,Midtjylland,Diabetes,Omicron,Moderate,Moderate,No,No,No,No,Yes,2,Driver,Never,22.7,Delayed Recovery
+74,Female,Nordjylland,Hypertension,Omicron,Moderate,Moderate,Yes,No,No,Yes,Yes,2,Driver,Current,18.2,Delayed Recovery
+18,Male,Hovedstaden,Cardiovascular,Alpha,Severe,High,No,No,No,No,Yes,3,Teacher,Current,25.1,Delayed Recovery
+82,Female,Nordjylland,Hypertension,Beta,Severe,Moderate,Yes,No,No,No,No,0,Student,Current,24.6,Typical Recovery
+53,Male,Hovedstaden,Asthma,Beta,Mild,Critical,No,No,No,Yes,Yes,2,Teacher,Former,22.0,Fast Recovery
+62,Female,Hovedstaden,Cardiovascular,Delta,Mild,Moderate,No,No,No,Yes,No,0,Office Worker,Never,26.5,Delayed Recovery
+87,Female,Midtjylland,Cardiovascular,Alpha,Mild,High,Yes,No,No,No,No,0,Driver,Current,11.7,Delayed Recovery
+48,Male,Midtjylland,Obesity,Omicron,Severe,Critical,No,No,No,Yes,Yes,1,Unemployed,Never,18.8,Delayed Recovery
+38,Male,Hovedstaden,Obesity,Beta,Severe,Moderate,No,No,No,No,No,0,Student,Former,30.3,Typical Recovery
+71,Female,Nordjylland,Diabetes,Alpha,Severe,Low,No,No,No,Yes,No,0,Healthcare,Never,12.9,Delayed Recovery
+63,Male,Nordjylland,Asthma,Beta,Moderate,High,No,No,No,No,Yes,1,Healthcare,Current,21.8,Delayed Recovery
+61,Female,Nordjylland,Obesity,Beta,Severe,High,No,No,No,No,No,0,Driver,Never,25.7,Delayed Recovery
+43,Female,Midtjylland,Hypertension,Delta,Mild,Critical,No,No,No,Yes,No,0,Office Worker,Former,26.9,Delayed Recovery
+83,Female,Sjælland,Asthma,XBB.1.5,Severe,Moderate,Yes,No,No,No,Yes,2,Student,Current,31.9,Typical Recovery
+81,Female,Midtjylland,Asthma,XBB.1.5,Mild,High,No,No,No,No,No,0,Driver,Current,29.3,Delayed Recovery
+42,Male,Sjælland,Asthma,XBB.1.5,Severe,Low,No,No,No,Yes,Yes,3,Unemployed,Never,26.4,Delayed Recovery
+56,Male,Nordjylland,Asthma,Beta,Severe,Critical,No,No,No,No,No,0,Healthcare,Current,33.9,Delayed Recovery
+26,Female,Midtjylland,Asthma,Delta,Moderate,Moderate,Yes,No,No,Yes,Yes,3,Teacher,Current,27.6,Delayed Recovery
+19,Male,Sjælland,Hypertension,Beta,Severe,Critical,No,No,No,No,Yes,1,Teacher,Former,18.2,Delayed Recovery
+45,Female,Sjælland,Diabetes,XBB.1.5,Mild,Moderate,Yes,No,No,No,No,0,Teacher,Never,25.7,Typical Recovery
+31,Male,Nordjylland,Cardiovascular,XBB.1.5,Moderate,High,No,No,No,Yes,No,0,Student,Current,17.5,Delayed Recovery
+89,Male,Hovedstaden,Obesity,Delta,Moderate,Low,No,No,No,No,No,0,Unemployed,Current,16.6,Typical Recovery
+62,Male,Syddanmark,Asthma,XBB.1.5,Severe,High,Yes,Yes,Yes,No,Yes,1,Teacher,Never,21.3,Delayed Recovery
+80,Female,Nordjylland,Asthma,Beta,Severe,Low,No,No,No,Yes,Yes,2,Driver,Current,21.7,Delayed Recovery
+62,Male,Midtjylland,Diabetes,Delta,Moderate,Low,Yes,No,No,Yes,Yes,2,Student,Current,24.2,Fast Recovery
+71,Male,Syddanmark,Cardiovascular,XBB.1.5,Severe,Moderate,No,No,No,Yes,No,0,Student,Former,26.2,Delayed Recovery
+51,Male,Syddanmark,Obesity,Alpha,Mild,High,Yes,No,No,No,Yes,2,Teacher,Former,19.7,Delayed Recovery
+43,Male,Syddanmark,Diabetes,Omicron,Moderate,Moderate,Yes,No,No,Yes,Yes,2,Student,Current,29.1,Delayed Recovery
+29,Female,Sjælland,Diabetes,Delta,Severe,Low,No,No,No,No,Yes,1,Driver,Former,13.3,Fast Recovery
+67,Female,Syddanmark,Diabetes,Alpha,Severe,Moderate,No,No,No,No,Yes,1,Office Worker,Former,27.7,Typical Recovery
+70,Male,Nordjylland,Obesity,Delta,Moderate,Moderate,No,No,No,Yes,No,0,Healthcare,Former,19.6,Delayed Recovery
+25,Female,Midtjylland,Diabetes,Beta,Moderate,Low,No,No,No,Yes,Yes,1,Healthcare,Current,29.5,Delayed Recovery
+67,Female,Syddanmark,Asthma,XBB.1.5,Mild,Low,No,No,No,No,Yes,2,Unemployed,Former,20.0,Fast Recovery
+21,Male,Sjælland,Diabetes,Alpha,Moderate,High,No,No,No,Yes,No,0,Unemployed,Never,35.8,Delayed Recovery
+86,Female,Hovedstaden,Diabetes,XBB.1.5,Severe,Critical,Yes,No,No,Yes,Yes,1,Office Worker,Never,19.7,Delayed Recovery
+33,Male,Hovedstaden,Cardiovascular,Omicron,Moderate,High,Yes,Yes,Yes,Yes,No,0,Unemployed,Never,30.3,Delayed Recovery
+87,Female,Midtjylland,Diabetes,Omicron,Mild,Moderate,No,No,No,No,No,0,Driver,Never,26.4,Typical Recovery
+47,Female,Midtjylland,Cardiovascular,Omicron,Moderate,Critical,No,No,No,Yes,No,0,Unemployed,Current,24.8,Delayed Recovery
+71,Male,Midtjylland,Obesity,Omicron,Moderate,Moderate,No,No,No,Yes,Yes,2,Driver,Current,29.1,Delayed Recovery
+24,Male,Nordjylland,Asthma,Beta,Moderate,Moderate,Yes,No,No,No,No,0,Healthcare,Never,25.4,Typical Recovery
+63,Female,Hovedstaden,Cardiovascular,XBB.1.5,Moderate,Low,Yes,No,No,No,No,0,Unemployed,Current,12.0,Fast Recovery
+58,Male,Hovedstaden,Cardiovascular,Alpha,Mild,High,No,No,No,Yes,Yes,2,Student,Current,29.6,Delayed Recovery
+55,Female,Sjælland,Hypertension,Beta,Mild,High,No,No,No,No,No,0,Healthcare,Never,25.9,Delayed Recovery
+87,Female,Midtjylland,Obesity,Alpha,Severe,Low,No,No,No,No,Yes,1,Student,Never,14.3,Fast Recovery
+62,Female,Hovedstaden,Cardiovascular,Beta,Severe,Critical,Yes,No,No,Yes,No,0,Student,Never,24.2,Delayed Recovery
+46,Female,Sjælland,Diabetes,Alpha,Mild,Moderate,No,No,No,No,No,0,Healthcare,Never,26.1,Typical Recovery
