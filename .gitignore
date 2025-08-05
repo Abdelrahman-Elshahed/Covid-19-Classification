@@ -1,0 +1,19 @@
+# Virtual environments
+venv/
+env/
+CovidRag/
+RagModule/CovidRag/
+
+# Generated data
+RagModule/vectorstore/
+RagModule/data/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS and IDE
+.DS_Store
+.vscode/
+.idea/
+*.log
