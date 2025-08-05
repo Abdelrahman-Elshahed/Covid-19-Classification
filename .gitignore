@@ -2,17 +2,19 @@
 venv/
 env/
 CovidRag/
-RagModule/CovidRag/
+
+# Environment variables
+.env
 
 # Generated data
-RagModule/vectorstore/
 RagModule/data/
+RagModule/vectorstore/
 
 # Python cache
 __pycache__/
 *.pyc
 
-# OS and IDE
+# OS and IDE files
 .DS_Store
 .vscode/
 .idea/
