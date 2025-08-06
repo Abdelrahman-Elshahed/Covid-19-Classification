@@ -1,5 +1,5 @@
 from langchain_community.vectorstores import FAISS
-from langchain.embeddings import HuggingFaceEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 import os
 
 INDEX_PATH = os.path.join(os.path.dirname(__file__), "../vectorstore/faiss_pubmed")
