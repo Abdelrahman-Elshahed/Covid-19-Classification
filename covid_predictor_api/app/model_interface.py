@@ -8,7 +8,7 @@ import os
 # and import necessary model or logic.
 
 # importing the model
-model = joblib.load(os.path.join(os.path.dirname(__file__), "..", "model", "noura_best_model.pkl"))
+model = joblib.load(os.path.join(os.path.dirname(__file__), "..", "model", "best_model.pkl"))
     
 # Defining the prediction function that calls the model
 def get_prediction(features: list) -> str:
