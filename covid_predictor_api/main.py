@@ -1,7 +1,14 @@
 from fastapi import FastAPI
 from typing import List
+import sys
+import os
 from app.schemas import PatientFeatures
 from app.model_interface import get_prediction
+
+#This line ensures the parent directory is in the path for module imports
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from RagModule.scripts.rag_pipeline import generate_explanation
 
 app = FastAPI(
     title="Reinfection Prediction API",
@@ -20,21 +27,8 @@ def predict(data: List[PatientFeatures]):
         features = list(data)
         prediction = get_prediction(features)
         
-        description = []
-        if data[0].Smoking_Status == 1:
-            description.append("Smoker")
-        else:
-            description.append("Non-Smoker")
-        if data[0].BMI > 30:
-            description.append("High BMI")
-        else:
-            description.append("Normal BMI")
-        if data[0].ICU_Admission == 1:
-            description.append("ICU history")
-        else:
-            description.append("No ICU history")
-
-        description = ", ".join(description) if description else "No critical risk indicators"
+        description = generate_explanation(features[0])
+        
         return {"reinfection_prediction": prediction, "description": description}
     except Exception as e:
         return {"error": str(e)}
