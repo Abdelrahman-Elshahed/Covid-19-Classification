@@ -4,12 +4,21 @@ from datetime import datetime
 from dotenv import load_dotenv
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_google_genai import ChatGoogleGenerativeAI
+from openai import AzureOpenAI
+from langchain_openai import AzureChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 
 
 load_dotenv()
+
+# Initialize Azure OpenAI client
+client = AzureOpenAI(
+    api_key=os.getenv("AZURE_API_KEY"),
+    api_version=os.getenv("AZURE_API_VERSION"),
+    azure_endpoint=os.getenv("AZURE_ENDPOINT")
+)
+deployment_name = os.getenv("DEPLOYMENT_NAME")
 
 LOG_PATH = os.path.join(os.path.dirname(__file__), "../data/qna_history.json")
 INDEX_PATH = os.path.join(os.path.dirname(__file__), "../vectorstore/faiss_pubmed")
@@ -42,7 +51,13 @@ embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-
 vectorstore = FAISS.load_local(INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
 retriever = vectorstore.as_retriever()
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-pro", temperature=0)
+llm = AzureChatOpenAI(
+    azure_deployment=os.getenv("DEPLOYMENT_NAME"),
+    api_key=os.getenv("AZURE_API_KEY"),
+    azure_endpoint=os.getenv("AZURE_ENDPOINT"),
+    api_version=os.getenv("AZURE_API_VERSION"),
+    temperature=0,
+)
 
 template = """
 You are a medical assistant explaining COVID-19 reinfection risk using research evidence.
