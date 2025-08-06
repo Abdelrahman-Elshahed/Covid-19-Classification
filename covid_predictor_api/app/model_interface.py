@@ -15,8 +15,7 @@ def get_prediction(features: list) -> str:
     """
     Function to get prediction based on patient data.
     """
-    data_dict = features
-    processed_data = preprocess_input_data(data_dict)
+    processed_data = preprocess_input_data(features)
     
     # numpy array for model input because the model expects a 2D array
     input_array = np.array(processed_data).reshape(1, -1)

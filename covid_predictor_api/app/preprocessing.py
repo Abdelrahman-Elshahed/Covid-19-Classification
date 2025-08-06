@@ -1,6 +1,6 @@
 import pandas as pd
 import pickle
-from  app.schemas import Patient_features
+from  app.schemas import PatientFeatures
 from pathlib import Path
 
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -15,10 +15,8 @@ with open(MODEL_DIR / "encoders.pkl", "rb") as f:
 
 # Preprocessing the input data to match the model's expected format
 
-def preprocess_input_data(patient_data: Patient_features):
-    # df = pd.DataFrame([patient_data.dict()])
-    
-    # If patient_data is a list of Patient_features, convert each to dict
+def preprocess_input_data(patient_data: PatientFeatures):
+    # If patient_data is a list of PatientFeatures, convert each to dict
     if isinstance(patient_data, list):
         data_dicts = [p.dict() for p in patient_data]
     else:

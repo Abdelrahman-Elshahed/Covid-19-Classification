@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from typing import List
-from app.schemas import Patient_features
+from app.schemas import PatientFeatures
 from app.model_interface import get_prediction
 
 app = FastAPI(
@@ -15,9 +15,8 @@ def read_root():
     return {"message": "COVID Reinfection Prediction API"}
 
 @app.post("/predict")
-def predict(data: List[Patient_features]):
+def predict(data: List[PatientFeatures]):
     try:
-        prediction = get_prediction(data)
         features = list(data)
         prediction = get_prediction(features)
         

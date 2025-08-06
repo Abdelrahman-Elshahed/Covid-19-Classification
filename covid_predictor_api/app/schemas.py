@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class Patient_features(BaseModel):
+class PatientFeatures(BaseModel):
     Age: int
     Gender: str
     Region: str
@@ -27,3 +27,7 @@ class Patient_features(BaseModel):
     Smoking_Status: str
     BMI: float
     Recovery_Classification: str
+    
+class PredictionResponse(BaseModel):
+    reinfection_prediction: int
+    description: str
