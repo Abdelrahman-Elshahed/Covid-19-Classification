@@ -57,8 +57,8 @@ Scientific evidence:
 TASK:
 1. Start with an empathetic statement to the patient.
 2. Clearly state the risk level for reinfection (Low / Moderate / High).
-3. In 3–5 sentences, explain the risk factors and patterns from the evidence
-   that match the patient’s profile (e.g., age, vaccine, conditions).
+3. In 3-5 sentences, explain the risk factors and patterns from the evidence
+   that match the patient's profile (e.g., age, vaccine, conditions).
 Only use the given scientific evidence and do not add unsupported information.
 
 Question:
