@@ -16,3 +16,7 @@ sentence-transformers
 faiss-cpu
 biopython
 python-dotenv
+
+# OpenAI
+openai
+langchain_openai
