@@ -38,24 +38,27 @@ def preprocess_input_data(patient_data: PatientFeatures):
     # Basic preprocessing
     binary_cols = ['Hospitalized', 'ICU_Admission', 'Ventilator_Support', 'Recovered', 'Vaccination_Status']
     for col in binary_cols:
-        df[col] = df[col].map({'Yes': 1, 'No': 0})
+        # Map known values, fill unknown values with -1
+        df[col] = df[col].map({'Yes': 1, 'No': 0}).fillna(-1).astype(int)
 
-    df = df[(df['BMI'] >= 10) & (df['BMI'] <= 60)]
+    # Handle BMI outliers by clipping instead of filtering
+    df['BMI'] = df['BMI'].clip(lower=10, upper=60)
     df.reset_index(drop=True, inplace=True)
 
     # === New Features ===
     # 1. Recovery duration in days
-    df["Recovery_Duration"] = (df["Date_of_Recovery"] - df["Date_of_Infection"]).dt.days
-
+    df["Recovery_Duration"] = (df["Date_of_Recovery"] - df["Date_of_Infection"]).dt.days.fillna(0)
+    # Avoid negative recovery durations
+    df["Recovery_Duration"] = df["Recovery_Duration"].apply(lambda x: x if x >= 0 else 0)
     # 2. Time to reinfection (post recovery)
-    df["Time_to_Reinfection"] = (df["Date_of_Reinfection"] - df["Date_of_Recovery"]).dt.days
+    df["Time_to_Reinfection"] = (df["Date_of_Reinfection"] - df["Date_of_Recovery"]).dt.days.fillna(0)
     df["Reinfected_Later"] = df["Time_to_Reinfection"].apply(lambda x: 1 if x > 0 else 0)
 
     # 3. Time between vaccination and infection
-    df["Vaccine_to_Infection_Days"] = (df["Date_of_Infection"] - df["Date_of_Last_Dose"]).dt.days
+    df["Vaccine_to_Infection_Days"] = (df["Date_of_Infection"] - df["Date_of_Last_Dose"]).dt.days.fillna(0)
 
     # 4. Hospital stay duration
-    df["Hospital_Stay_Duration"] = (df["Hospital_Discharge_Date"] - df["Hospital_Admission_Date"]).dt.days
+    df["Hospital_Stay_Duration"] = (df["Hospital_Discharge_Date"] - df["Hospital_Admission_Date"]).dt.days.fillna(0)
     # avoid negatives
     df["Hospital_Stay_Duration"] = df["Hospital_Stay_Duration"].apply(lambda x: x if x >= 0 else 0)  
 
@@ -71,10 +74,14 @@ def preprocess_input_data(patient_data: PatientFeatures):
     # === Encoding categorical features ===
     for column in df.select_dtypes(include=['object']).columns:
         if column in encoders:
-            df[column] = encoders[column].transform(df[column])
+            known_classes = set(encoders[column].classes_)
+            df[column] = df[column].apply(
+                lambda x: encoders[column].transform([x])[0] if x in known_classes else 0
+    )
         else:
             df[column] = pd.factorize(df[column])[0]
-    
+    # Fill any remaining NaNs to avoid issues during scaling
+    df.fillna(0, inplace=True)
     # === Scaling the features ===
     scaled_data = scaler.transform(df)
 
