@@ -90,7 +90,7 @@ def generate_explanation(patient: dict) -> str:
     Logs the question and answer in a JSON file.
     """
     query = build_query(patient)
-    response = qa_chain.run(query)
+    response = qa_chain.invoke(query)["result"]
 
     log_qna(query, response)
 
