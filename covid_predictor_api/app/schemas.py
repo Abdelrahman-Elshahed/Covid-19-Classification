@@ -27,7 +27,3 @@ class PatientFeatures(BaseModel):
     Smoking_Status: str
     BMI: float
     Recovery_Classification: str
-    
-class PredictionResponse(BaseModel):
-    reinfection_prediction: int
-    description: str

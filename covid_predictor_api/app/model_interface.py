@@ -16,8 +16,10 @@ def get_prediction(features: list) -> str:
     Function to get prediction based on patient data.
     """
     processed_data = preprocess_input_data(features)
-    
+    # Debug: print processed data for inspection
+    print("Processed data for model:", processed_data)
     # numpy array for model input because the model expects a 2D array
     input_array = np.array(processed_data).reshape(1, -1)
     prediction = model.predict(input_array)
+    print("Model raw prediction:", prediction)
     return "Yes" if prediction[0] == 1 else "No"
