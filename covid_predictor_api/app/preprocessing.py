@@ -65,6 +65,7 @@ def preprocess_input_data(patient_data: PatientFeatures):
     df["Recovery_Duration"] = (df["Date_of_Recovery"] - df["Date_of_Infection"]).dt.days.fillna(0)
     # Avoid negative recovery durations
     df["Recovery_Duration"] = df["Recovery_Duration"].apply(lambda x: x if x >= 0 else 0)
+    
     # 2. Time to reinfection (post recovery)
     df["Time_to_Reinfection"] = (df["Date_of_Reinfection"] - df["Date_of_Recovery"]).dt.days.fillna(0)
     df["Reinfected_Later"] = df["Time_to_Reinfection"].apply(lambda x: 1 if x > 0 else 0)
@@ -95,8 +96,10 @@ def preprocess_input_data(patient_data: PatientFeatures):
     )
         else:
             df[column] = pd.factorize(df[column])[0]
+            
     # Fill any remaining NaNs to avoid issues during scaling
     df.fillna(0, inplace=True)
+    
     # === Scaling the features ===
     scaled_data = scaler.transform(df)
 

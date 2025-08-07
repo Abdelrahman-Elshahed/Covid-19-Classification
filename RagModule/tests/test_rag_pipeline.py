@@ -16,7 +16,7 @@ patient = {
     "Ventilator_Support": "No",
     "Recovered": "Yes",
     "Date_of_Recovery": "2023-05-10T00:00:00.000Z",
-    "Date_of_Reinfection": "1900-01-01T00:00:00.000Z",
+    "Date_of_Reinfection": "2024-05-10T00:00:00.000Z",
     "Vaccination_Status": "Yes",
     "Vaccine_Type": "Pfizer",
     "Doses_Received": 2,

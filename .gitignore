@@ -1,5 +1,5 @@
 # Virtual environments
-venv/
+.venv/
 env/
 CovidRag/
 
@@ -9,6 +9,7 @@ CovidRag/
 # Python cache
 __pycache__/
 *.pyc
+qna_history.json
 
 # OS and IDE files
 .DS_Store
