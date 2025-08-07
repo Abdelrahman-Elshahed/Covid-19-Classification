@@ -3,6 +3,15 @@ import pickle
 from  app.schemas import PatientFeatures
 from pathlib import Path
 
+def normalize_timezone(dt_series):
+    """Convert datetime series to UTC timezone, handling both naive and aware datetimes"""
+    if dt_series.dt.tz is None:
+        # If timezone-naive, assume UTC
+        return dt_series.dt.tz_localize('UTC')
+    else:
+        # If timezone-aware, convert to UTC
+        return dt_series.dt.tz_convert('UTC')
+
 CURRENT_DIR = Path(__file__).resolve().parent
 
 MODEL_DIR = CURRENT_DIR.parent / "model"
@@ -30,10 +39,16 @@ def preprocess_input_data(patient_data: PatientFeatures):
         if col not in df.columns:
             df[col] = 0
             
-    # Convert datetime fields to pandas datetime if they are not already
+    # Convert datetime fields to pandas datetime and normalize timezones
     date_cols = [col for col in df.columns if "Date" in col]
     for col in date_cols:
         df[col] = pd.to_datetime(df[col], errors='coerce')
+        # Ensure all datetimes are timezone-naive for consistent operations
+        if hasattr(df[col].dtype, 'tz') and df[col].dt.tz is not None:
+            df[col] = df[col].dt.tz_convert('UTC').dt.tz_localize(None)
+        elif df[col].notna().any():
+            # For timezone-naive datetimes, just ensure they're properly formatted
+            df[col] = pd.to_datetime(df[col], errors='coerce')
     
     # Basic preprocessing
     binary_cols = ['Hospitalized', 'ICU_Admission', 'Ventilator_Support', 'Recovered', 'Vaccination_Status']
