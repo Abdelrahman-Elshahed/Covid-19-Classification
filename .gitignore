@@ -15,3 +15,6 @@ __pycache__/
 .vscode/
 .idea/
 *.log
+
+# Node.js dependencies
+node_modules/
