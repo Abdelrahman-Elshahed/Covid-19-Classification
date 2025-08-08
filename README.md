@@ -19,42 +19,12 @@ This project processes medical records to predict **Reinfection** cases using a 
 
 - Python
 - FastAPI
-- React.js
+- Next.js
 - Pandas & NumPy
 - Scikit-learn
 - Pydantic
 - Uvicorn
 - Joblib
-
----
-
-## 📁 Project Structure
-```
-covid_predictor/
-│
-├── data/
-│ └── covid1-19 Dataset.csv # Data Used for training the model
-│
-├── notebooks/
-│ └── EDA.ipynb
-│
-├── covid_reinfection_api/
-│ ├── main.py # FastAPI endpoint
-│ ├── app/
-│ │   ├── model_interface.py # Loads the trained model and scaler
-│ │   ├── preprocessing.py   # Feature engineering and transformation logic
-│ │   └── schemas.py         # Input schema using Pydantic
-│ └── model/
-│     ├── encoders.pkl       # Saved LabelEncoders for categorical features
-│     ├── model.pkl          # Best Trained ML model (binary classifier)
-│     └── scaler.pkl         # trained scaler used for scaling the input
-│
-├── utils/
-│ └── encoder_mappings.pkl # Saved LabelEncoders for categorical features
-│
-├── requirements.txt # Project dependencies
-└── README.md # Project documentation
-```
 
 ---
 
@@ -68,22 +38,26 @@ cd covid_predictor
 ```
 
 2. **install dependencies:**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 3. **Run the API:**
+
 ```bash
 uvicorn ./main:app --reload
 ```
 
 4. **Test the API:**
-```
+
+```bash
 Go to http://127.0.0.1:8000/docs to use the interactive Swagger UI.
 ```
 
 ## 📥 Example Request Body
-```
+
+```bash
 [{
   "Age": 45,
   "Gender": "Male",
@@ -114,12 +88,103 @@ Go to http://127.0.0.1:8000/docs to use the interactive Swagger UI.
 }]
 ```
 
+---
+
 ## ✅ Expected Response Body
-```
+
+```bash
 {
   "reinfection_prediction": "No",
   "description": "Non-Smoker, Normal BMI, No ICU history"
 }
+```
+
+## Getting Started with the FrontEnd
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## 📁 Project Structure
+
+```bash
+covid_predictor/
+├── covid_predictor_api/
+│ ├── main.py # FastAPI endpoint
+│ ├── app/
+│ │   ├── model_interface.py # Loads the trained model and scaler
+│ │   ├── preprocessing.py   # Feature engineering and transformation logic
+│ │   └── schemas.py         # Input schema using Pydantic
+│ └── model/
+│     ├── encoders.pkl       # Saved LabelEncoders for categorical features
+│     ├── model.pkl          # Best Trained ML model (binary classifier)
+│     └── scaler.pkl         # trained scaler used for scaling the input
+│
+├── data/
+│ ├── splitted_data/
+│ │   ├── X_test.csv         # Test set features
+│ │   ├── X_train.csv        # Training set features
+│ │   ├── y_test.csv         # Test set labels
+│ │   └── y_train.csv        # Training set labels
+│ ├── splitted_data_encoded/ 
+│ │   ├── X_test.csv         # Test set features with encoding
+│ │   ├── X_train.csv        # Training set features with encoding
+│ │   ├── y_test.csv         # Test set labels with encoding
+│ │   └── y_train.csv        # Training set labels with encoding
+│ ├── covid1-19 Dataset.csv  # Data Used for training the model
+│ └── Cleaned_Data.csv       # Cleaned and preprocessed dataset
+│
+├── frontend_next.js/
+│ ├── app/
+│ │   ├── page.js            # Main page component
+│ │   ├── components/        # Reusable React components
+│ │   └── styles/            # CSS/SCSS modules
+│ ├── public/                # Static assets (images, icons, etc.)
+│ ├── package.json           # Frontend dependencies and scripts
+│ ├── next.config.js         # Next.js configuration
+│ └── README.md              # Frontend-specific documentation
+│
+├── frontend_streamlit/
+│   ├── pages/                  # Streamlit pages
+│   │   └── COVID_Chatbot.py    # Streamlit chatbot interface
+│   └── home.py                 # Main Streamlit application
+│
+├── notebooks/
+│ ├── Data_Cleaning.ipynb       # Jupyter notebook for data cleaning
+│ ├── Data_Splitting.ipynb      # Jupyter notebook for data splitting
+│ ├── Encoding_Features.ipynb   # Jupyter notebook for encoding features
+│ ├── EDA.ipynb                 # Exploratory Data Analysis notebook
+│ ├── Model_Evaluation.ipynb    # Jupyter notebook for model evaluation
+│ └── Model_Training.ipynb      # Jupyter notebook for model training
+│
+├── RagModule/
+│ ├── data/                  # Data files for retrieval-augmented generation (RAG)
+│ ├── scripts/               # Utility and pipeline scripts for RAG workflows
+│ ├── tests/                 # Unit and integration tests for RAG components
+│ ├── vector_store/          # Vector database files for document embeddings and retrieval
+│ └── README.md              # Documentation for the RAG module
+│
+├── pyproject.toml           # Python project configuration 
+│
+├── requirements.txt
+│ 
+├── README.md                # Project documentation 
+│
+└── uv.lock                   # Uvicorn lock file for FastAPI server
 ```
 
 ---
