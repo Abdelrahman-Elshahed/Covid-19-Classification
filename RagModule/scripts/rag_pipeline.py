@@ -14,167 +14,230 @@ load_dotenv()
 LOG_PATH = os.path.join(os.path.dirname(__file__), "../data/qna_history.json")
 INDEX_PATH = os.path.join(os.path.dirname(__file__), "../vectorstore/faiss_pubmed")
 
-# Check if Azure credentials are available
-AZURE_AVAILABLE = all([
-    os.getenv("AZURE_API_KEY"),
-    os.getenv("AZURE_API_VERSION"),
-    os.getenv("AZURE_ENDPOINT"),
-    os.getenv("DEPLOYMENT_NAME")
-])
+# Validate required environment variables
+REQUIRED_ENV_VARS = [
+    "AZURE_API_KEY",
+    "AZURE_API_VERSION",
+    "AZURE_ENDPOINT",
+    "DEPLOYMENT_NAME"
+]
+missing_vars = [var for var in REQUIRED_ENV_VARS if not os.getenv(var)]
+if missing_vars:
+    raise EnvironmentError(f"Missing required environment variables: {', '.join(missing_vars)}")
 
-# Initialize Azure OpenAI client only if credentials are available
-client = None
-if AZURE_AVAILABLE:
-    try:
-        client = AzureOpenAI(
-            api_key=os.getenv("AZURE_API_KEY"),
-            api_version=os.getenv("AZURE_API_VERSION"),
-            azure_endpoint=os.getenv("AZURE_ENDPOINT")
-        )
-        deployment_name = os.getenv("DEPLOYMENT_NAME")
-        print("Azure OpenAI client initialized successfully")
-    except Exception as e:
-        print(f"Warning: Failed to initialize Azure OpenAI client: {e}")
-        AZURE_AVAILABLE = False
-        client = None
-else:
-    print("Azure OpenAI credentials not available - using fallback responses")
+# Validate vectorstore exists
+if not os.path.exists(INDEX_PATH):
+    raise FileNotFoundError(f"Vector index not found at {INDEX_PATH}. Please generate it first.")
+
+# Initialize Azure LLM
+llm = AzureChatOpenAI(
+    azure_deployment=os.getenv("DEPLOYMENT_NAME"),
+    api_key=os.getenv("AZURE_API_KEY"),
+    azure_endpoint=os.getenv("AZURE_ENDPOINT"),
+    api_version=os.getenv("AZURE_API_VERSION"),
+    temperature=0,
+)
+
+# Initialize Vector Store
+embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+vectorstore = FAISS.load_local(INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
+retriever = vectorstore.as_retriever(search_kwargs={"k": 3}) # Limit to top 3 results
+
+# Define Prompt Template
+template = """
+You are a medical assistant explaining COVID-19 reinfection risk using research evidence.
+
+Patient details:
+- Age, Gender, Vaccine Type, Doses Received, Preexisting Condition, COVID Strain, Symptoms, Severity, Hospitalization Status, ICU Admission, Ventilator Support, BMI, Smoking Status, last infection date and last dose date are included in the question
+- Use the patient's profile to tailor the explanation
+Scientific evidence:
+{context}
+
+TASK:
+1. Start with an empathetic statement.
+2. State the risk level (Low/Moderate/High).
+3. In 3-5 sentences, explain risk factors from evidence matching the patient's profile.
+Only use the given scientific evidence.
+
+Format response exactly:
+Based on the research, the risk level is **[Risk Level]**.
+
+According to the evidence, [explanation with patient-specific factors].
+
+Question:
+{question}
+"""
+prompt = PromptTemplate(template=template, input_variables=["context", "question"])
+
+# Initialize QA Chain
+qa_chain = RetrievalQA.from_chain_type(
+    llm,
+    retriever=retriever,
+    chain_type_kwargs={"prompt": prompt}
+)
 
 def log_qna(question: str, answer: str):
-    """Append a new question-answer pair to a JSON file."""
+    """Log Q&A to JSON file"""
     record = {
         "timestamp": datetime.utcnow().isoformat(),
         "question": question,
         "answer": answer
     }
-
-    # Load existing data if available
     if os.path.exists(LOG_PATH):
-        try:
-            with open(LOG_PATH, "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except json.JSONDecodeError:
-            data = []
+        with open(LOG_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
     else:
         data = []
-
-    data.append(record)
-
-    # Ensure directory exists
-    os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
+        os.makedirs(os.path.dirname(LOG_PATH), exist_ok=True)
     
+    data.append(record)
     with open(LOG_PATH, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
-# Initialize components only if Azure is available
-qa_chain = None
-if AZURE_AVAILABLE and os.path.exists(INDEX_PATH):
+def build_query(patient: dict) -> str:
+    """Convert ALL relevant patient data into a detailed query"""
+    base_info = (
+        f"Patient: {patient.get('Age')} years, "
+        f"{patient.get('Gender')}, "
+        f"Vaccine: {patient.get('Vaccine_Type')} ({patient.get('Doses_Received')} doses), "
+        f"Conditions: {patient.get('Preexisting_Condition')}, "
+        f"Strain: {patient.get('COVID_Strain')}, "
+        f"Symptoms: {patient.get('Symptoms')} ({patient.get('Severity')})"
+    )
+    
+    clinical_details = (
+        f"Hospitalized: {patient.get('Hospitalized')}, "
+        f"ICU: {patient.get('ICU_Admission')}, "
+        f"Ventilator: {patient.get('Ventilator_Support')}, "
+        f"BMI: {patient.get('BMI')}, "
+        f"Smoking: {patient.get('Smoking_Status')}"
+    )
+    
+    time_factors = (
+        f"Last infection: {patient.get('Date_of_Infection')}, "
+        f"Last dose: {patient.get('Date_of_Last_Dose')}"
+    )
+    
+    return (
+        f"COVID-19 reinfection risk assessment considering:\n"
+        f"1. {base_info}\n"
+        f"2. {clinical_details}\n"
+        f"3. {time_factors}"
+    )
+
+def generate_explanation(patient: dict) -> str:
+    """Generate explanation using RAG system only"""
+    query = build_query(patient)
     try:
-        # Load Vector Store 
+        response = qa_chain.invoke(query)["result"]
+        formatted_response = f"[ RAG Medical Literature ]\n{response}"
+        log_qna(query, formatted_response)
+        return formatted_response
+    except Exception as e:
+        error_msg = f"RAG system error: {str(e)}"
+        log_qna(query, error_msg)
+        return f"[ RAG Medical Literature ]\n{error_msg}"
+
+# Function to generate chat response using RAG system secondary to the main function & second page in COVID_Chatbot.py (streamlit app)
+def generate_chat_response(question: str) -> str:
+    if not hasattr(generate_chat_response, "qa_chain"):
         embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
         vectorstore = FAISS.load_local(INDEX_PATH, embeddings, allow_dangerous_deserialization=True)
-        retriever = vectorstore.as_retriever()
-
+        
         llm = AzureChatOpenAI(
             azure_deployment=os.getenv("DEPLOYMENT_NAME"),
             api_key=os.getenv("AZURE_API_KEY"),
             azure_endpoint=os.getenv("AZURE_ENDPOINT"),
             api_version=os.getenv("AZURE_API_VERSION"),
-            temperature=0,
+            temperature=0
         )
-
-        template = """
-You are a medical assistant explaining COVID-19 reinfection risk using research evidence.
-
-Patient details (from the system):
-- Age and demographics are included in the question
-- Vaccine history and conditions are included in the question
-
-Scientific evidence:
-{context}
-
-TASK:
-1. Start with an empathetic statement to the patient.
-2. Clearly state the risk level for reinfection (Low / Moderate / High).
-3. In 3-5 sentences, explain the risk factors and patterns from the evidence
-   that match the patient's profile (e.g., age, vaccine, conditions).
-Only use the given scientific evidence and do not add unsupported information.
-
-Format your response exactly like this:
-Based on the research, the risk level is **[Risk Level]**.
-
-According to the evidence, [explain the specific findings that apply to this patient's profile, mentioning relevant factors like age, vaccination status, underlying conditions, etc.].
-
-Question:
-{question}
-"""
-
-        prompt = PromptTemplate(template=template, input_variables=["context", "question"])
-
-        qa_chain = RetrievalQA.from_chain_type(
+        
+        prompt_template = """
+        You are a medical assistant answering questions about COVID-19 using scientific research evidence.
+        
+        Answer the user's question based ONLY on the scientific evidence provided below.
+        Be concise and accurate in your response.
+        If the evidence doesn't contain information to answer the question, admit that you don't know.
+        
+        Scientific evidence:
+        {context}
+        
+        Question:
+        {question}
+        """
+        
+        prompt = PromptTemplate(
+            template=prompt_template,
+            input_variables=["context", "question"]
+        )
+        
+        generate_chat_response.qa_chain = RetrievalQA.from_chain_type(
             llm,
-            retriever=retriever,
+            retriever=vectorstore.as_retriever(search_kwargs={"k": 3}),
             chain_type_kwargs={"prompt": prompt}
         )
-    except Exception as e:
-        print(f"Warning: Failed to initialize RAG components: {e}")
-
-def build_query(patient: dict) -> str:
-    """
-    Convert patient dictionary into a query string for retrieval.
-    """
-    age = patient.get('Age', patient.get('age', ''))
-    doses = patient.get('Doses_Received', patient.get('doses', ''))
-    vaccine = patient.get('Vaccine_Type', patient.get('vaccine', ''))
-    conditions = patient.get('Preexisting_Condition', patient.get('conditions', []))
-    
-    if isinstance(conditions, str):
-        conditions = [conditions]
-    elif not isinstance(conditions, list):
-        conditions = []
-    
-    parts = [
-        f"age {age}",
-        f"{doses} doses {vaccine}",
-        " ".join(conditions)
-    ]
-    return f"COVID reinfection risk factors for {' '.join(parts)}"
-
-def generate_explanation(patient: dict) -> str:
-    """
-    Generate a scientific explanation for reinfection risk.
-    Logs the question and answer in a JSON file.
-    """
-    if not AZURE_AVAILABLE or qa_chain is None:
-        # Fallback response when Azure OpenAI is not available
-        age = patient.get('Age', patient.get('age', 'unknown'))
-        vaccine_status = patient.get('Vaccination_Status', 'unknown')
-        conditions = patient.get('Preexisting_Condition', 'none')
-        severity = patient.get('Severity', patient.get('Symptoms', 'unknown'))
-        
-        fallback_response = f"""[ RAG Medical Literature ]
-I understand you have questions about your risk of getting COVID-19 again, and it's smart to stay informed.
-
-Based on general medical knowledge, the risk level is **Moderate**.
-
-According to general medical principles, patients aged {age} with {conditions} condition(s) and {vaccine_status} vaccination status may have varying reinfection risks. Factors like previous infection severity ({severity}), vaccination history, underlying health conditions, and time since last infection all contribute to individual risk assessment. For comprehensive analysis, please consult healthcare professionals who can access current research and provide personalized medical advice.
-
-Note: This is a general response as the AI-powered analysis system requires Azure OpenAI configuration."""
-        
-        query = build_query(patient)
-        log_qna(query, fallback_response)
-        return fallback_response.strip()
     
     try:
-        query = build_query(patient)
-        response = qa_chain.invoke(query)["result"]
-        
-        # Format the response with RAG Medical Literature header
-        formatted_response = f"[ RAG Medical Literature ]\n{response}"
-        
-        log_qna(query, formatted_response)
-        return formatted_response
+        result = generate_chat_response.qa_chain.invoke(question)["result"]
+        log_qna(question, result)
+        return result
     except Exception as e:
-        error_response = f"[ RAG Medical Literature ]\nSorry, I'm unable to provide a detailed analysis at the moment due to a technical issue: {str(e)}"
-        log_qna(build_query(patient), error_response)
-        return error_response
+        return f"Error generating response: {str(e)}"
+    
+def generate_ml_aware_response(patient: dict, ml_prediction: str = None) -> str:
+    """Generate explanation combining ML prediction and RAG evidence"""
+    query_text = build_query(patient)
+    
+    # Provide a default value if ml_prediction is None
+    if ml_prediction is None:
+        ml_prediction = "Unknown"
+    
+    try:
+        # Directly retrieve relevant documents
+        docs = retriever.invoke(query_text)
+        
+        # Combine document content into context
+        context_text = "\n\n".join([doc.page_content for doc in docs])
+        
+        # Create the complete prompt as a string with all variables directly included
+        ml_aware_prompt = f"""
+You are a medical assistant explaining COVID-19 reinfection risk using research evidence.
+The ML model has predicted: {ml_prediction} risk for this patient.
+
+Patient details:
+{query_text}
+- Age, Gender, Vaccine Type, Doses Received, Preexisting Condition, COVID Strain, Symptoms, Severity, Hospitalization Status, ICU Admission, Ventilator Support, BMI, Smoking Status, last infection date and last dose date are included in the question
+- Use the patient's profile to tailor the explanation
+
+Scientific evidence:
+{context_text}
+
+TASK:
+1. Start with an empathetic statement.
+2. State the risk level (Low/Moderate/High).
+3. In 3-5 sentences, explain risk factors from evidence matching the patient's profile.
+Only use the given scientific evidence.
+
+Format response exactly:
+Based on the research, the risk level is **[Risk Level]**.
+ML Prediction: {ml_prediction} risk.
+According to the evidence, [explanation with patient-specific factors].
+"""
+        
+        # Call the LLM directly without using RetrievalQA
+        response = llm.invoke(ml_aware_prompt)
+        
+        # Format the response
+        if hasattr(response, 'content'):
+            result = response.content
+        else:
+            result = str(response)
+            
+        formatted_response = f"[ Integrated Analysis ]\n{result}"
+        log_qna(f"ML: {ml_prediction} - {query_text}", formatted_response)
+        return formatted_response
+        
+    except Exception as e:
+        error_msg = f"Integration error: {str(e)}"
+        log_qna(query_text, error_msg)
+        return f"[ Integrated Analysis ]\n{error_msg}"
