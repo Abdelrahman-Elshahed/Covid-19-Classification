@@ -19,10 +19,8 @@ API_URL = "http://127.0.0.1:8000/predict"
 # Function to make prediction
 def predict_reinfection(patient_data):
     try:
-        print("Sending data to API for prediction...", patient_data)
         response = requests.post(API_URL, json=[patient_data])
         if response.status_code == 200:
-            print("Prediction response:", response.json())
             return response.json()
         else:
             st.error(f"Error: {response.status_code} - {response.text}")
