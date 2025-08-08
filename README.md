@@ -273,7 +273,7 @@ python test/test_rag_pipeline.py
 
 ### 7️⃣ Prompt
 
-![Uploading image.png…]()
+![WhatsApp Image 2025-08-08 at 23 30 38](https://github.com/user-attachments/assets/4de6d1ee-8ffe-4f8c-b8f1-b663c460ef11)
 
 
 ## 🙌 Author
