@@ -22,3 +22,6 @@ altair
 # OpenAI
 openai
 langchain_openai
+
+# frontend
+streamlit
