@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from typing import List
 from datetime import datetime
@@ -6,25 +6,21 @@ import sys
 import os
 from app.schemas import PatientFeatures
 from app.model_interface import get_prediction
-
+from pydantic import BaseModel
+import requests 
 #This line ensures the parent directory is in the path for module imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-try:
-    from RagModule.scripts.rag_pipeline import generate_explanation
-    RAG_AVAILABLE = True
-except Exception as e:
-    print(f"Warning: RAG module not available: {e}")
-    RAG_AVAILABLE = False
-    
-    def generate_explanation(patient_data):
-        return "Detailed explanation service is currently unavailable. Please consult healthcare professionals for personalized risk assessment."
+from RagModule.scripts.rag_pipeline import generate_explanation  # No try-except
+from RagModule.scripts.rag_pipeline import generate_chat_response
 
 app = FastAPI(
     title="Reinfection Prediction API",
     description="API for predicting reinfection based on patient features",
     version="1.0.0"
 )
+class ChatRequest(BaseModel):
+    question: str
 
 # Add CORS middleware to allow frontend connections
 app.add_middleware(
@@ -40,7 +36,6 @@ app.add_middleware(
 def read_root():
     return {
         "message": "COVID Reinfection Prediction API",
-        "rag_available": RAG_AVAILABLE,
         "status": "running"
     }
 
@@ -48,8 +43,7 @@ def read_root():
 def health_check():
     return {
         "status": "healthy",
-        "prediction_service": "available",
-        "explanation_service": "available" if RAG_AVAILABLE else "limited"
+        "services": ["prediction", "RAG_explanation"]
     }
 
 @app.options("/predict")
@@ -63,30 +57,36 @@ def predict(data: List[PatientFeatures]):
         if not data:
             raise HTTPException(status_code=400, detail="No patient data provided")
         
-        print(f"Received data: {data}")
-        print(f"Processing {len(data)} features")
-        
-        # The validation and field mapping is now handled in the PatientFeatures model
-        prediction = get_prediction(data)
-        print(f"Prediction result: {prediction}")
-        
-        # Use the first patient's data for explanation
+        # Get ML prediction
+        prediction = get_prediction(data)     
+        # Prepare patient data
         first_patient_dict = data[0].model_dump() if hasattr(data[0], 'model_dump') else data[0].dict()
-        description = generate_explanation(first_patient_dict)
-        print(f"Description: {description}")
         
-        result = {
-            "reinfection_prediction": prediction, 
+        # Generate integrated explanation
+        from RagModule.scripts.rag_pipeline import generate_ml_aware_response
+        description = generate_ml_aware_response(
+            patient=first_patient_dict,
+            ml_prediction=str(prediction)
+        )
+        
+        return {
+            "reinfection_prediction": str(prediction), 
             "description": description,
-            "rag_service_used": RAG_AVAILABLE
+            "services": ["prediction", "integrated_analysis"]
         }
-        print(f"Returning result: {result}")
-        return result
         
-    except HTTPException:
-        raise
     except Exception as e:
-        print(f"Error in prediction: {e}")
-        import traceback
-        traceback.print_exc()
+        print(f"Error in prediction: {str(e)}")
         raise HTTPException(status_code=500, detail=f"Prediction error: {str(e)}")
+@app.post("/chat")
+async def chat_endpoint(chat_request: ChatRequest):  
+    try:
+        question = chat_request.question.strip()
+        if not question:
+            raise HTTPException(status_code=400, detail="Question is required")
+        
+        response = generate_chat_response(question)
+        return {"response": response}
+    
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
