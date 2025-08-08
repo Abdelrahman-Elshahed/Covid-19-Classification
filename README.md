@@ -189,6 +189,93 @@ covid_predictor/
 
 ---
 
+## Rag Module
+
+
+### 1️⃣ Overview
+
+This module implements a *Retrieval-Augmented Generation (RAG)* pipeline to provide evidence-based explanations for *COVID-19 reinfection risk*.
+It uses:
+
+* *FAISS* for vector search over PubMed abstracts.
+* *HuggingFace sentence-transformers* for embeddings.
+* *Google Generative AI (Gemini)* for LLM responses.
+
+---
+
+### 2️⃣ Environment Setup
+
+```bash
+# Create virtual environment
+python -m venv CovidRag
+source CovidRag/bin/activate   # Linux/Mac
+CovidRag\Scripts\activate      # Windows
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+---
+
+### 3️⃣ Environment Variables (.env)
+
+```ini
+GOOGLE_API_KEY=your_google_api_key
+HUGGINGFACEHUB_API_TOKEN=your_hf_token
+```
+
+> Get HuggingFace token from: [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
+
+---
+
+### 4️⃣ Usage
+
+*Step 1 – Fetch PubMed abstracts*
+
+```bash
+python scripts/fetch_pubmed.py
+```
+
+*Step 2 – Build FAISS vector store*
+
+```bash
+python scripts/build_vectorstore.py
+```
+
+*Step 3 – Run RAG pipeline*
+
+```bash
+python scripts/rag_pipeline.py
+```
+
+---
+
+### 5️⃣ Testing
+
+```bash
+# Test only retrieval
+python test/test_retrieval.py
+
+# Test full RAG flow
+python test/test_rag_pipeline.py
+```
+
+---
+
+### 6️⃣ Key Components
+
+* *Embeddings Model*: sentence-transformers/all-MiniLM-L6-v2
+* *LLM Model*: gemini-2.5-pro (Google Generative AI)
+* *Retriever*: FAISS index over chunked PubMed abstracts
+* *Prompt*: Medical assistant style, structured output
+
+---
+
+### 7️⃣ Prompt
+
+![Uploading image.png…]()
+
+
 ## 🙌 Author
 Mohamed Nasser
 [LinkedIn](https://www.linkedin.com/in/mohamed-nasser-ahmed/) | [GitHub](https://github.com/Mohamed-NA)
