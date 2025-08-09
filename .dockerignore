@@ -1,0 +1,64 @@
+# Git and version control
+.git
+.gitignore
+README.md
+.env
+
+# Python cache and virtual environments
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.Python
+env
+pip-log.txt
+pip-delete-this-directory.txt
+.tox
+.coverage
+.coverage.*
+.cache
+.pytest_cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis
+.venv
+venv/
+ENV/
+
+# Node.js dependencies and cache
+frontend_nextjs/node_modules
+frontend_nextjs/.next
+frontend_nextjs/out
+frontend_nextjs/build
+frontend_nextjs/.env*.local
+frontend_nextjs/.vercel
+
+# Jupyter notebooks
+notebooks/
+*.ipynb
+
+# Streamlit (not needed in Docker)
+frontend_streamlit/
+
+# OS and IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Test and development files
+test/
+tests/
+.pytest_cache
+commands.txt
+
+# Large data files (comment out if needed)
+# data/
