@@ -2,6 +2,7 @@
 .venv/
 env/
 CovidRag/
+.env.docker
 
 # Environment variables
 .env
