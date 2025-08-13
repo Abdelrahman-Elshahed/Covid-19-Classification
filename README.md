@@ -1,281 +1,315 @@
-# COVID-19 Reinfection Prediction
+## COVID‑19 Reinfection Predictor & Research Chatbot
 
-A complete ML pipeline for predicting COVID-19 reinfection. Includes data cleaning, encoding, feature engineering, model training, evaluation, and deployment using FastAPI. The system accepts structured patient data and returns real-time predictions.
+End‑to‑end system that predicts the risk of COVID‑19 reinfection from structured patient data and explains the decision using Retrieval‑Augmented Generation (RAG) over peer‑reviewed medical literature. It ships with a FastAPI backend, a Next.js UI, a Streamlit dashboard, a reproducible RAG pipeline, and Docker packaging for deployment to local and cloud environments.
 
----
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## 🚀 Project Overview
 
-This project processes medical records to predict **Reinfection** cases using a trained classification model. It includes:
-- Cleaned and preprocessed healthcare dataset.
-- Feature engineering and standardization.
-- A trained ML model for binary classification.
-- FastAPI backend to expose the model for inference.
-- React.js frontend for users to use the model.
+## Table of Contents
 
----
+  - [Overview](#overview)
+  - [Project Structure](#project-structure)
+  - [Features](#features)
+  - [Setup](#setup)
+  - [Backend API (FastAPI) Usage](#backend-api-fastapi-usage)
+  - [Run with Next.js Application](#run-with-nextjs-application)
+  - [Run with Streamlit Application](#run-with-streamlit-application)
+  - [RAG Module](#rag-module)
+  - [Dockerization](#dockerization)
+  - [Cloud Deployment GCP And Azure](#cloud-deployment-gcp-and-azure)
 
-## 🧠 Technologies Used
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-- Python
-- FastAPI
-- Next.js
-- Pandas & NumPy
-- Scikit-learn
-- Pydantic
-- Uvicorn
-- Joblib
 
----
+## Overview
 
-## 🧪 How to Run the API
+This project predicts whether a patient is at risk of COVID‑19 reinfection based on demographics, vaccination history, clinical data, and prior infection timelines. The API augments its prediction with a literature‑grounded explanation produced by a RAG pipeline that retrieves relevant PubMed abstracts from a FAISS index and summarizes them with Azure OpenAI.
 
-1. **Clone the repo:**
+Key model assets:
+- `covid_predictor_api/model/best_model.pkl` – trained ML Model classifier
+- `covid_predictor_api/model/scaler.pkl` – feature scaler used at inference
+- `covid_predictor_api/model/encoders.pkl` – label encoders for categorical features
 
-```bash
-git clone https://github.com/your-username/covid_predictor
-cd covid_predictor
+RAG assets:
+- `RagModule/data/pubmed_abstracts.csv` – fetched abstracts
+- `RagModule/vectorstore/faiss_pubmed/` – FAISS index built from the abstracts
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+## Project Structure
+
+```
+covid-19-classification/
+├─ covid_predictor_api/
+│  ├─ main.py                    # FastAPI app: /predict, /chat, /health
+│  └─ app/
+│     ├─ model_interface.py      # Loads model and runs inference
+│     ├─ preprocessing.py        # Feature engineering + scaling/encoding
+│     └─ schemas.py              # Pydantic request/response models
+│
+├─ RagModule/
+│  ├─ scripts/
+│  │  ├─ fetch_pubmed.py         # Fetch PubMed abstracts
+│  │  ├─ build_vectorstore.py    # Build FAISS index
+│  │  └─ rag_pipeline.py         # RAG generation (explanations & chat)
+│  ├─ data/                      # pubmed_abstracts.csv, qna_history.json
+│  ├─ tests/                     # test_rag_pipeline.py, test_retrieval.py
+│  └─ vectorstore/faiss_pubmed/  # Saved FAISS index
+│
+├─ frontend_nextjs/              # Next.js Frontend App (React 19 & Next.js 15) Dashboard + RAG chatbot
+├─ frontend_streamlit/           # Streamlit Frontend App Dashboard + RAG chatbot
+├─ models/                       # Model snapshot(s)
+├─ data/                         # Datasets (processed/splits)
+├─ Dockerfile                    # Multi‑stage build (Next.js + FastAPI)
+├─ pyproject.toml                # Project deps (pip/uv compatible)
+├─ requirements.txt              # Alternative dependency list
+└─ uv.lock                       # uv lockfile
 ```
 
-2. **install dependencies:**
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-```bash
+## Features
+
+- Reproducible data and model pipeline artifacts (encoders, scaler, trained model)
+- Real‑time reinfection prediction API (FastAPI)
+- Evidence‑backed explanations via RAG using FAISS + sentence‑transformers +  OpenAI
+- Two frontends: modern Next.js app and Streamlit dashboard (with a research chatbot)
+- Ready‑to‑run Docker image and scripts for cloud targets (/GCP)
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Setup
+
+### Prerequisites:
+- Python 3.13+
+
+### Clone the Repository
+
+   ```bash
+   git clone https://github.com/Abdelrahman-Elshahed/Covid-19-Classification.git
+   ```
+### Create and activate a virtual environment:
+#### Option A – using pip:
+ ```powershell
+python -m venv .venv
+.venv\Scripts\Activate
 pip install -r requirements.txt
 ```
 
-3. **Run the API:**
+#### Option B – using uv (fast Python package manager):
 
-```bash
-uvicorn ./main:app --reload
+```powershell
+uv venv
+.venv\Scripts\Activate
+uv pip install -r requirements.txt
+```
+### Configure Environment Variables
+
+
+  1- Copy the `.env.example` file to `.env`:
+  ```bash
+cp .env.example .env
 ```
 
-4. **Test the API:**
-
+  2- Open the `.env` file and fill in your own values:
+  
 ```bash
-Go to http://127.0.0.1:8000/docs to use the interactive Swagger UI.
+AZURE_ENDPOINT=
+AZURE_API_KEY=
+AZURE_API_VERSION=2024-12-01-preview
+DEPLOYMENT_NAME=gpt-4
 ```
 
-## 📥 Example Request Body
+------------------------------------------------------------------------------------------------------------------------
+## Backend API (FastAPI) Usage
 
-```bash
-[{
-  "Age": 45,
-  "Gender": "Male",
-  "Region": "Hovedstaden",
-  "Preexisting_Condition": "Diabetes",
-  "Date_of_Infection": "2023-04-15",
-  "COVID_Strain": "Omicron",
-  "Symptoms": "Mild",
-  "Severity": "Moderate",
-  "Hospitalized": "Yes",
-  "Hospital_Admission_Date": "2023-04-18",
-  "Hospital_Discharge_Date": "2023-04-25",
-  "ICU_Admission": "No",
-  "Ventilator_Support": "No",
-  "Recovered": "Yes",
-  "Date_of_Recovery": "2023-05-10",
-  "Reinfection": "No",
-  "Date_of_Reinfection": "1900-01-01",  
-  "Vaccination_Status": "Yes",
-  "Vaccine_Type": "Pfizer",
-  "Doses_Received": 2,
-  "Date_of_Last_Dose": "2023-01-15",
-  "Long_COVID_Symptoms": "Fatigue",  
-  "Occupation": "Teacher",
-  "Smoking_Status": "Former",
-  "BMI": 25.3,
-  "Recovery_Classification": "Fast Recovery"
-}]
+Base URL (local): `http://127.0.0.1:8000`
+
+### Endpoints:
+- GET `/health` – simple health check: { status, services }
+- POST `/predict` – predict reinfection and return an integrated explanation
+- POST `/chat` – general research Q&A over COVID‑19 literature (RAG)
+
+### Run the API:
+
+```powershell
+cd covid_predictor_api
+python -m uvicorn main:app --reload --port 8000
+# Docs: http://127.0.0.1:8000/docs
 ```
 
----
+### Swagger UI:
 
-## ✅ Expected Response Body
+#### Prediction & RAG Side Explainer
+<img width="1420" height="844" alt="Image" src="https://github.com/user-attachments/assets/4ef3074f-2d74-4f6a-a3f6-7120bc113561" />
 
-```bash
-{
-  "reinfection_prediction": "No",
-  "description": "Non-Smoker, Normal BMI, No ICU history"
-}
-```
+#### Chatbot
+<img width="1423" height="590" alt="Image" src="https://github.com/user-attachments/assets/653a587e-42f3-4fab-9b0a-01b26589771b" />
 
-## Getting Started with the FrontEnd
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Run with Next.js Application
 
-First, run the development server:
+### Next.js app (`frontend_nextjs`)
 
-```bash
+- Tech: Next.js 15, React 19, Tailwind CSS
+- Features:
+  - Patient form and result visualization
+  - API health indicator and error states
+  - Optional research chatbot page
+
+#### Dev server:
+
+```powershell
+cd frontend_nextjs
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# App: http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Production build:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```powershell
+cd frontend_nextjs
+npm ci
+npm run build
+npm start
+```
+### Prediction & RAG Side Explainer
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<img width="1911" height="994" alt="Image" src="https://github.com/user-attachments/assets/9cc67dc5-0c5f-4a4d-8f23-566b4ac8e3cb" />
 
-## 📁 Project Structure
+<img width="1328" height="941" alt="Image" src="https://github.com/user-attachments/assets/5b670206-1a6a-4c19-a93b-378fac23a840" />
+
+### Chatbot
+
+<img width="1918" height="994" alt="Image" src="https://github.com/user-attachments/assets/2cfa04f9-e9d0-41d9-8854-409c75e6de83" />
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+## Run with Streamlit Application
+
+### Streamlit app (`frontend_streamlit`)
+
+Provides a dashboard for predictions and a dedicated research chatbot page.
+
+Run locally:
+
+```powershell
+cd frontend_streamlit
+streamlit run Home.py
+# Dashboard: http://localhost:8501 (default)
+```
+
+### Prediction & RAG Side Explainer
+
+<img width="1914" height="988" alt="Image" src="https://github.com/user-attachments/assets/4e37a03b-70fe-4a4f-8d75-a9bbeab801cc" />
+
+<img width="1915" height="993" alt="Image" src="https://github.com/user-attachments/assets/37648495-6918-4732-9799-8c95e42fae81" />
+
+
+### Chatbot
+
+<img width="1917" height="986" alt="Image" src="https://github.com/user-attachments/assets/92c46197-d13a-40c6-949e-92cef9a61f38" />
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## RAG module
+
+The RAG pipeline retrieves relevant PubMed abstracts using FAISS and summarizes them with Azure OpenAI. It’s used in two places:
+1) To produce an explanation alongside ML predictions (integrated mode).
+2) As a standalone chatbot endpoint (`/chat`) and Streamlit page.
+
+### Core scripts (under `RagModule/scripts`):
+- `fetch_pubmed.py` – fetch abstracts to `RagModule/data/pubmed_abstracts.csv`
+- `build_vectorstore.py` – embed and index docs to `RagModule/vectorstore/faiss_pubmed/`
+- `rag_pipeline.py` – main generation functions:
+  - `generate_ml_aware_response(patient: dict, ml_prediction: str)` – integrates ML prediction & explanation
+  - `generate_chat_response(question: str)` – general COVID‑19 Q&A
+ 
+
+
+### Testing the RAG Retrieval & Pipeline 
+
+Unit tests live under `RagModule/tests`.
+
+#### Test Retrieval
+```powershell
+# From RagModule folder
+cd RagModule
+python -m tests.test_retrieval
+```
+<img width="1104" height="346" alt="Image" src="https://github.com/user-attachments/assets/610a4d0d-7dd1-416e-a429-660fe0a69386" />
+
+#### Test Rag Pipeline
+```powershell
+# From RagModule folder
+cd RagModule
+python -m tests.test_rag_pipeline
+```
+<img width="1113" height="410" alt="Image" src="https://github.com/user-attachments/assets/0dc6c55c-a89a-403f-95a0-f20e90c1fc60" />
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Dockerization
+
+
+  Multi‑stage Dockerfile builds the Next.js frontend and FastAPI backend into a single image. The container starts the API and serves the built frontend bundle on port 8000.
+  
+- Build the Docker image with:
+     ```bash
+     docker build -t covid-19-classification-p3 .
+     ```
+- Run the container with:
+     ```bash
+     docker run -p 8000:8000 covid-19-classification-p3
+     ```
+  <img width="1400" height="784" alt="Image" src="https://github.com/user-attachments/assets/281a11b2-5330-44ba-81c4-8e41f69f2820" />
+### Docker image on Docker Hub [Click Here](https://hub.docker.com/repository/docker/bodaaa/covid-19-classification-p3/general).
+####  Usage
+
+- Pull the image:
 
 ```bash
-covid_predictor/
-├── covid_predictor_api/
-│ ├── main.py # FastAPI endpoint
-│ ├── app/
-│ │   ├── model_interface.py # Loads the trained model and scaler
-│ │   ├── preprocessing.py   # Feature engineering and transformation logic
-│ │   └── schemas.py         # Input schema using Pydantic
-│ └── model/
-│     ├── encoders.pkl       # Saved LabelEncoders for categorical features
-│     ├── model.pkl          # Best Trained ML model (binary classifier)
-│     └── scaler.pkl         # trained scaler used for scaling the input
-│
-├── data/
-│ ├── splitted_data/
-│ │   ├── X_test.csv         # Test set features
-│ │   ├── X_train.csv        # Training set features
-│ │   ├── y_test.csv         # Test set labels
-│ │   └── y_train.csv        # Training set labels
-│ ├── splitted_data_encoded/ 
-│ │   ├── X_test.csv         # Test set features with encoding
-│ │   ├── X_train.csv        # Training set features with encoding
-│ │   ├── y_test.csv         # Test set labels with encoding
-│ │   └── y_train.csv        # Training set labels with encoding
-│ ├── covid1-19 Dataset.csv  # Data Used for training the model
-│ └── Cleaned_Data.csv       # Cleaned and preprocessed dataset
-│
-├── frontend_next.js/
-│ ├── app/
-│ │   ├── page.js            # Main page component
-│ │   ├── components/        # Reusable React components
-│ │   └── styles/            # CSS/SCSS modules
-│ ├── public/                # Static assets (images, icons, etc.)
-│ ├── package.json           # Frontend dependencies and scripts
-│ ├── next.config.js         # Next.js configuration
-│ └── README.md              # Frontend-specific documentation
-│
-├── frontend_streamlit/
-│   ├── pages/                  # Streamlit pages
-│   │   └── COVID_Chatbot.py    # Streamlit chatbot interface
-│   └── home.py                 # Main Streamlit application
-│
-├── notebooks/
-│ ├── Data_Cleaning.ipynb       # Jupyter notebook for data cleaning
-│ ├── Data_Splitting.ipynb      # Jupyter notebook for data splitting
-│ ├── Encoding_Features.ipynb   # Jupyter notebook for encoding features
-│ ├── EDA.ipynb                 # Exploratory Data Analysis notebook
-│ ├── Model_Evaluation.ipynb    # Jupyter notebook for model evaluation
-│ └── Model_Training.ipynb      # Jupyter notebook for model training
-│
-├── RagModule/
-│ ├── data/                  # Data files for retrieval-augmented generation (RAG)
-│ ├── scripts/               # Utility and pipeline scripts for RAG workflows
-│ ├── tests/                 # Unit and integration tests for RAG components
-│ ├── vector_store/          # Vector database files for document embeddings and retrieval
-│ └── README.md              # Documentation for the RAG module
-│
-├── pyproject.toml           # Python project configuration 
-│
-├── requirements.txt
-│ 
-├── README.md                # Project documentation 
-│
-└── uv.lock                   # Uvicorn lock file for FastAPI server
+docker pull bodaaa/covid-19-classification-p3:latest
 ```
 
----
-
-## Rag Module
+- Run the container:
 
 
-### 1️⃣ Overview
-
-This module implements a *Retrieval-Augmented Generation (RAG)* pipeline to provide evidence-based explanations for *COVID-19 reinfection risk*.
-It uses:
-
-* *FAISS* for vector search over PubMed abstracts.
-* *HuggingFace sentence-transformers* for embeddings.
-* *Google Generative AI (Gemini)* for LLM responses.
-
----
-
-### 2️⃣ Environment Setup
-
-```bash
-# Create virtual environment
-python -m venv CovidRag
-source CovidRag/bin/activate   # Linux/Mac
-CovidRag\Scripts\activate      # Windows
-
-# Install dependencies
-pip install -r requirements.txt
+```
+docker run -p 8000:8000 bodaaa/covid-19-classification-p3:latest
 ```
 
----
+<img width="1903" height="992" alt="Image" src="https://github.com/user-attachments/assets/bbe55755-20a4-4747-8f55-b5c537b89626" />
 
-### 3️⃣ Environment Variables (.env)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Cloud Deployment GCP And Azure
 
-```ini
-GOOGLE_API_KEY=your_google_api_key
-HUGGINGFACEHUB_API_TOKEN=your_hf_token
-```
-
-> Get HuggingFace token from: [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
-
----
-
-### 4️⃣ Usage
-
-*Step 1 – Fetch PubMed abstracts*
-
-```bash
-python scripts/fetch_pubmed.py
-```
-
-*Step 2 – Build FAISS vector store*
-
-```bash
-python scripts/build_vectorstore.py
-```
-
-*Step 3 – Run RAG pipeline*
-
-```bash
-python scripts/rag_pipeline.py
-```
-
----
-
-### 5️⃣ Testing
-
-```bash
-# Test only retrieval
-python test/test_retrieval.py
-
-# Test full RAG flow
-python test/test_rag_pipeline.py
-```
-
----
-
-### 6️⃣ Key Components
-
-* *Embeddings Model*: sentence-transformers/all-MiniLM-L6-v2
-* *LLM Model*: gemini-2.5-pro (Google Generative AI)
-* *Retriever*: FAISS index over chunked PubMed abstracts
-* *Prompt*: Medical assistant style, structured output
-
----
-
-### 7️⃣ Prompt
-
-![WhatsApp Image 2025-08-08 at 23 30 38](https://github.com/user-attachments/assets/4de6d1ee-8ffe-4f8c-b8f1-b663c460ef11)
+You can push the image to a registry and deploy to various managed runtimes. The following are common options illustrated by the included images.
 
 
-## 🙌 Author
-Mohamed Nasser
-[LinkedIn](https://www.linkedin.com/in/mohamed-nasser-ahmed/) | [GitHub](https://github.com/Mohamed-NA)
+### Azure
+
+- Azure Container Apps [Click Here](https://covid-19-classification-p3.calmpond-91d55286.westus2.azurecontainerapps.io).
+<p><img src="assets/Azure-Container-Apps.png" alt="Azure Container Apps" width="70%"/></p>
+
+- Azure Container Instances [Click Here](http://4.149.71.187:8000).
+<p><img src="assets/Azure-Container-Instance.png" alt="Azure Container Instances" width="70%"/></p>
+
+### Google Cloud (GCP)
+
+- Cloud Run (serverless containers) [Click Here](https://covid-19-classification-p3-310017642033.europe-west1.run.app).
+<p><img src="assets/GCP-CloudRun.png" alt="GCP Cloud Run" width="70%"/></p>
+
+- Compute Engine (VM) [Click Here](http://104.198.68.239:8000).
+<p><img src="assets/GCP-ComputeEngine(VM instance).png" alt="GCP Compute Engine" width="70%"/></p>
+
+### General steps:
+1) Build and tag your image
+2) Push to Docker Hub or a cloud registry
+3) Create a service with port 8000 exposed
+4) Provide environment variables for Azure OpenAI and any runtime configs
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
