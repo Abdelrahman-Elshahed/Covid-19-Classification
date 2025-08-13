@@ -23,7 +23,7 @@ End‑to‑end system that predicts the risk of COVID‑19 reinfection from stru
 
 ## Overview
 
-This project predicts whether a patient is at risk of COVID‑19 reinfection based on demographics, vaccination history, clinical data, and prior infection timelines. The API augments its prediction with a literature‑grounded explanation produced by a RAG pipeline that retrieves relevant PubMed abstracts from a FAISS index and summarizes them with Azure OpenAI.
+This project predicts whether a patient is at risk of COVID‑19 reinfection based on demographics, vaccination history, clinical data, and prior infection timelines. The API augments its prediction with a literature‑grounded explanation produced by a RAG pipeline that retrieves relevant PubMed abstracts from a FAISS index and summarizes them with Azure OpenAI ( GPT-4 ).
 
 Key model assets:
 - `covid_predictor_api/model/best_model.pkl` – trained ML Model classifier
@@ -73,7 +73,7 @@ covid-19-classification/
 
 - Reproducible data and model pipeline artifacts (encoders, scaler, trained model)
 - Real‑time reinfection prediction API (FastAPI)
-- Evidence‑backed explanations via RAG using FAISS + sentence‑transformers +  OpenAI
+- Evidence‑backed explanations via RAG using FAISS + sentence‑transformers +  OpenAI ( GPT-4 )
 - Two frontends: modern Next.js app and Streamlit dashboard (with a research chatbot)
 - Ready‑to‑run Docker image and scripts for cloud targets (/GCP)
 
@@ -215,7 +215,7 @@ streamlit run Home.py
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ## RAG module
 
-The RAG pipeline retrieves relevant PubMed abstracts using FAISS and summarizes them with Azure OpenAI. It’s used in two places:
+The RAG pipeline retrieves relevant PubMed abstracts using FAISS and summarizes them with Azure OpenAI ( GPT-4 ). It’s used in two places:
 1) To produce an explanation alongside ML predictions (integrated mode).
 2) As a standalone chatbot endpoint (`/chat`) and Streamlit page.
 
@@ -309,7 +309,7 @@ You can push the image to a registry and deploy to various managed runtimes. The
 1) Build and tag your image
 2) Push to Docker Hub or a cloud registry
 3) Create a service with port 8000 exposed
-4) Provide environment variables for Azure OpenAI and any runtime configs
+4) Provide environment variables for Azure OpenAI ( GPT-4 ) and any runtime configs
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
